@@ -75,6 +75,16 @@ create_country_leader = {
 		#
 	}
 }
+create_country_leader = {
+	
+	name = "Eugene  \"Bull\" Connor "
+	picture = "gfx_leaders_SAL_eugene_connor.dds"
+	expire = "1965.1.1"
+	ideology = southern_populism
+	traits = {
+		#
+	}
+}
 
 ###################################
 
