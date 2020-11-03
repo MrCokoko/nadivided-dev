@@ -47,9 +47,14 @@
  STX_democratic:0 "Republic of Texas"
  STX_democratic_DEF:0 "the Republic of Texas"
  STX_democratic_ADJ:0 "Texan"
+ STX_progressivism:1 "Republic of Texas"
+ STX_progresssivism_DEF:1  "the Repubic od Texas"
  STX_fascism_ADJ:0 "Texan"
  STX_neutrality_ADJ:0 "Texan"
  STX_communism_ADJ:0 "Texan"
+ STX_progressivism_ADJ:0 "Texan" 
+ 
+ 
  
  SLA_fascism:1 "Cajun Confederacy"
  SLA_fascism_DEF:1 "Cajun Confederacy"
@@ -364,8 +369,8 @@
  SKS_neutrality_ADJ:0 "Kansan"
  SKS_communism_ADJ:0 "Kansan"
  
- SMO_fascism:1 "Missouri"
- SMO_fascism_DEF:1 "Missouri"
+ SMO_fascism:1 "Confederate Missouri"
+ SMO_fascism_DEF:1 "Confederate Missouri"
  SMO_neutrality:0 "Missouri"
  SMO_neutrality_DEF:0 "Missouri"
  SMO_communism:1 "Republic of Missouri"
