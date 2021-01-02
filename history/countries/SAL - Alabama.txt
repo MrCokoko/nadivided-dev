@@ -184,3 +184,6 @@ create_navy_leader = {
 	coordination_skill = 3
 	
 }
+add_ideas = {
+	SAL_Black_Rebels
+}

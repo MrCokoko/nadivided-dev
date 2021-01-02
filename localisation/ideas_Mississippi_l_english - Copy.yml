@@ -1,0 +1,18 @@
+﻿l_english:
+##########################################
+######## COLOR CHANGE § ##################
+##########################################
+
+    SMS_Black_Rebels:0 "Black Rebels"
+    SMS_Black_Rebels_desc:0 "Ever since 1934 the Southern Tenant Farmers Union has been growing in the South. While not as strong as in Arkansas the STFU is a force to be reckoned with in Mississippi. Unlike in Arkansas however membership is almost completely black. A new leader has emerged, a young world war 1 veteran Rex Douglas. Douglas has created a movement for fair payment among negro farmers for there work. As a result he has become enemy number 1 of the Klan."
+
+
+###########################
+########## MISC ###########
+###########################
+#Custom Effect Tooltips
+    1_SMS_tt:0 ""
+    
+#Opinion Modifiers
+
+

@@ -1,0 +1,18 @@
+﻿l_english:
+##########################################
+######## COLOR CHANGE § ##################
+##########################################
+
+    SAL_Black_Rebels:0 "Black Rebels"
+    SAL_Black_Rebels_desc:0 "Following the dissolution of the Union, the government was able to pass much harsher Jim Crow Laws without the retaliation of the Federal Government. These new laws have made African Americans in the state what essentially amounts to second class citizens, creating a great deal of Resistance among African Americans, who make up more than 35 percent of Alabama's population. One of the main resistance leaders in Alabama has been Nash Cobb. Ever since Nash was in a gun battle with police over the seizure a friend's property, he’s been on the run. He’s been leading a underground movement for the Sharecroppers Union. Nash has been behind multiple bombings and shootings of Alabama government officials."
+
+
+###########################
+########## MISC ###########
+###########################
+#Custom Effect Tooltips
+    1_SAL_tt:0 ""
+    
+#Opinion Modifiers
+
+

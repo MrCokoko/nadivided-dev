@@ -1,0 +1,18 @@
+﻿l_english:
+##########################################
+######## COLOR CHANGE § ##################
+##########################################
+
+    SVA_Black_Rebels:0 "Black Independence"
+    SVA_Black_Rebels_desc:0 "Philip Randolph is a leading figure among the black socialist movement. He was one of the first leaders to suppose the creation of a multiple black nations in the South. His ideas have caught on as Jim Crow grows continually stronger. Randolph has been working on a movement to gain independence for blacks in Tide Water however he advises caution in order to get Northern support. His movement have worked to undermine the states economy and political process though sabotage and strikes. They have stopped short of assassinations unlike in the Deep South."
+
+
+###########################
+########## MISC ###########
+###########################
+#Custom Effect Tooltips
+    1_SVA_tt:0 ""
+    
+#Opinion Modifiers
+
+

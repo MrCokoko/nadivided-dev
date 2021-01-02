@@ -1,0 +1,21 @@
+﻿l_english:
+##########################################
+######## COLOR CHANGE § ##################
+##########################################
+
+    SAR_Farmer_Strikes:0 "Farmer Strikes"
+    SAR_Farmer_Strikes_desc:0 ""
+
+    SAR_Bankrupt:0 "Bankrupt"
+    SAR_Bankrupt_desc:0 ""
+
+
+###########################
+########## MISC ###########
+###########################
+#Custom Effect Tooltips
+    1_SAR_tt:0 ""
+    
+#Opinion Modifiers
+
+

@@ -1194,6 +1194,7 @@ spriteTypes = {
 	texturefile = "gfx/interface/ideas/Rifle_behindgrass.dds"
 	}
 
+<<<<<<< Updated upstream
 ###NEWYORKCITY###
 
 	spriteType = {
@@ -1269,5 +1270,40 @@ spriteTypes = {
 	spriteType = {
 	name = "GFX_idea_NYC_Secret_Services"
 	texturefile = "gfx/interface/ideas/idea_NYC_Secret_Services.dds"
+	}
+
+#############  SOUTH  #############
+
+###Alabama###
+
+	spriteType = {
+	name = "GFX_idea_SAL_Black_Rebels"
+	texturefile = "gfx/interface/ideas/spr_masters_of_our_own_fate.dds"
+	}
+
+###Mississippi###
+
+	spriteType = {
+	name = "GFX_idea_SMS_Black_Rebels"
+	texturefile = "gfx/interface/ideas/spr_masters_of_our_own_fate.dds"
+	}
+	
+###Virginia###
+
+	spriteType = {
+	name = "GFX_idea_SVA_Black_Rebels"
+	texturefile = "gfx/interface/ideas/spr_masters_of_our_own_fate.dds"
+	}
+
+###Arkansas###
+
+	spriteType = {
+	name = "GFX_idea_SAR_Farmer_Strikes"
+	texturefile = "gfx/interface/ideas/FRA_factory_strikes.dds"
+	}
+
+	spriteType = {
+	name = "GFX_idea_SAR_Bankrupt"
+	texturefile = "gfx/interface/ideas/idea_tur_balkan_central_bank.dds"
 	}
 }

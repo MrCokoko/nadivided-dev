@@ -145,4 +145,7 @@ create_corps_commander = {
 	planning_skill = 1
 	logistics_skill = 1
 	}
+add_ideas = {
+	SMS_Black_Rebels
+}
 		
