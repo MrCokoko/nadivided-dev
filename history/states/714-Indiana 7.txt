@@ -1,14 +1,18 @@
-state = {
-    id = 714
-    name = "STATE_714"
-    provinces = {
-        2118 3956 3962 7702 7705 7713
-    }
-    history = {
-        owner = FAM
-        add_core_of = FAM
-    }
-    manpower = 10
-    buildings_max_level_factor=1.000
-    state_category = town
+
+state={
+	id=714
+	name="STATE_714"
+
+	history={
+		owner = FAM
+		add_core_of = FAM
+
+	}
+
+	provinces={
+		2118 3956 7702 7717 7720 7726 
+	}
+	manpower=10
+	buildings_max_level_factor=1.000
+	state_category=town
 }

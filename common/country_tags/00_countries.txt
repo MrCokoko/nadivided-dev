@@ -223,4 +223,7 @@ PIL = "countries/Progressive Illinois"
 CLE = "countries/Cleveland.txt"
 CHI = "countries/Chicago.txt"
 MAR = "countries/Marion Republic.txt"
+MMG = "countries/Michigan Military.txt"
+SUP = "countries/Superior.txt"
+GRA = "countries/Grand Rapids.txt"
 =======

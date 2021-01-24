@@ -1,14 +1,18 @@
-state = {
-    id = 729
-    name = "STATE_729"
-    provinces = {
-        2211 7818 7820
-    }
-    history = {
-        owner = CHI
-        add_core_of = CHI
-    }
-    manpower = 10
-    buildings_max_level_factor=1.000
-    state_category = town
+
+state={
+	id=729
+	name="STATE_729"
+
+	history={
+		owner = FAM
+		add_core_of = FAM
+
+	}
+
+	provinces={
+		2211 7818 7820 
+	}
+	manpower=10
+	buildings_max_level_factor=1.000
+	state_category=town
 }
