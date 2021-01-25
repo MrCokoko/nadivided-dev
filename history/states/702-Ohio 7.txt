@@ -5,10 +5,14 @@ state = {
         3963 7636 7638 7639
     }
     history = {
-        owner = LEG
-        add_core_of = LEG
+        owner = SOH
+        add_core_of = SOH
+        # add_core_of = LEG
+        buildings = {
+            infrastructure = 2
+        }
     }
-    manpower = 10
+    manpower = 51178
     buildings_max_level_factor=1.000
-    state_category = rural
+    state_category = pastoral
 }

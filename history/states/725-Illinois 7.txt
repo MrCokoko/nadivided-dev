@@ -6,7 +6,9 @@ state={
 	history={
 		owner = FOM
 		add_core_of = FOM
-
+		victory_points = {
+			1990 30 
+		}
 	}
 
 	provinces={

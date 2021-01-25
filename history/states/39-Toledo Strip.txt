@@ -1,13 +1,14 @@
 
 state={
 	id=39
-	name="Toledo Strip"
+	name="STATE_39"
 	resources={
 		aluminium=4
 	}
 	
 	history={
-		owner = TOL
+		owner = SOH
+		add_core_of = SOH
 		add_core_of = TOL
 		buildings = {
 			infrastructure = 7
@@ -30,9 +31,9 @@ state={
 	provinces={
 		2310 3494 3991 7609
 	}
-	manpower=400000  
+	manpower=318130
 	buildings_max_level_factor=1.000
-	state_category=large_town
+	state_category=city
 		
 
 }
