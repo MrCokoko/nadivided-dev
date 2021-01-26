@@ -5,14 +5,19 @@ state = {
         1991 3938 3939 3943 7564 7616 7619 7620 7624 7627
     }
     history = {
+
         owner = DAY
         add_core_of = DAY
         
         victory_points = {
             7616 3
         }
+        buildings = {
+            infrastructure = 4
+
+        }
     }
-    manpower = 10
+    manpower = 78664
     buildings_max_level_factor=1.000
-    state_category = town
+    state_category = rural
 }

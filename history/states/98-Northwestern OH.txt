@@ -4,10 +4,11 @@ state={
 	name="STATE_98"
 
 	history={
-		owner = TOL
-		add_core_of = TOL
+		owner = SOH
+		add_core_of = SOH
+		# add_core_of = TOL
 		buildings = {
-			infrastructure = 6
+			infrastructure = 3
 			industrial_complex = 1
 
 		}
@@ -20,7 +21,7 @@ state={
 	provinces={
 		2247 3981 7604 7642
 	}
-	manpower=1140000
+	manpower=29533
 	buildings_max_level_factor=1.000
-	state_category=large_town
+	state_category=rural
 }
