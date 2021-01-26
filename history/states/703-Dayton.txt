@@ -4,9 +4,13 @@ state = {
     provinces = {
         3947 7623
     }
+
     history = {
         owner = DAY
         add_core_of = DAY
+        victory_points = {
+            3947 15
+        }
     }
     manpower = 10
     buildings_max_level_factor=1.000

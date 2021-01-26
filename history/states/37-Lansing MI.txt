@@ -3,14 +3,14 @@ state={
 	name="STATE_37"
 	
 	history={
-		owner = SMI
+		owner = MMG
 		buildings = {
 			infrastructure = 10
 			industrial_complex = 1
 			arms_factory = 1
 			air_base = 1
 		}
-		add_core_of = SMI
+		add_core_of = MMG
 		victory_points = {
 			3411 20
 		}

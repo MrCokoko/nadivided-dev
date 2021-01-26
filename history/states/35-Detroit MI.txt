@@ -7,7 +7,7 @@ state={
 	}
 
 	history={
-		owner = SMI
+		owner = DET
 		buildings = {
 			infrastructure = 10
 			industrial_complex = 4
@@ -19,7 +19,6 @@ state={
 			}
 
 		}
-		add_core_of = SMI
 		add_core_of = DET
 		victory_points = {
 			2382 50 

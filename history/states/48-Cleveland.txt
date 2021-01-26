@@ -22,6 +22,9 @@ state={
 		}
 		owner = SNU
 		add_core_of = SNU
+		victory_points = {
+            7541 30
+        }
 
 	}
 

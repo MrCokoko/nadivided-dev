@@ -7,6 +7,10 @@ state = {
     history = {
         owner = LEG
         add_core_of = LEG
+        victory_points = {
+            7638 10
+        }
+
     }
     manpower = 10
     buildings_max_level_factor=1.000

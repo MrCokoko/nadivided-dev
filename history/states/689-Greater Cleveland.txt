@@ -24,6 +24,10 @@ state={
 		}
 		add_core_of = YUG
 
+		victory_points = {
+			2136 5
+		}
+
 	}
 
 	provinces={

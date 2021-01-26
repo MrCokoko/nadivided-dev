@@ -16,6 +16,10 @@ state={
 		}
 		add_core_of = OOH
 
+		victory_points = {
+            1917 1
+        }
+
 	}
 
 	provinces={

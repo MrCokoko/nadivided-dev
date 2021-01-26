@@ -5,8 +5,8 @@ state = {
         2464 5723 6471 7894 7903 7905 7910 7975 7976
     }
     history = {
-        owner = SMI
-        add_core_of = SMI
+        owner = MMG
+        add_core_of = MMG
     }
     manpower = 10
     buildings_max_level_factor=1.000

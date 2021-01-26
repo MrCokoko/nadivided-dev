@@ -7,7 +7,7 @@ state={
 	}
 
 	history={
-		owner = SMI
+		owner = SUP
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 1
@@ -19,7 +19,7 @@ state={
 			}
 
 		}
-		add_core_of = SMI
+		add_core_of = SUP
 
 	}
 

@@ -15,6 +15,9 @@ state={
 
 		}
 		add_core_of = LEG
+		victory_points = {
+            7568 3
+        }
 
 	}
 

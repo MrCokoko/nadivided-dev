@@ -741,8 +741,8 @@ MAR = {
 	color_ui = rgb { 74 132 173 }
 }
 MMG = {
-	color = rgb { 54 76 196 }
-	color_ui = rgb { 54 76 196 }
+	color = rgb { 31 48 145 }
+	color_ui = rgb { 31 48 145 }
 }
 SUP = {
 	color = rgb { 130 86 0 }
