@@ -8,7 +8,6 @@ state = {
         owner = SOH
         add_core_of = SOH
         victory_points = {
-            7628 25
             7628 30
         }
         buildings = {

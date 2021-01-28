@@ -4,8 +4,8 @@ state={
 	name="STATE_536"
 
 	history={
-		owner = SOH
-		add_core_of = SOH
+		owner = OOH
+		add_core_of = OOH
 		buildings = {
 			infrastructure = 6
 			air_base = 1
@@ -13,7 +13,6 @@ state={
 			industrial_complex = 2
 
 		}
-		add_core_of = OOH
 		victory_points = {
             3936 25
         }

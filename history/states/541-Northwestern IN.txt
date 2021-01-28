@@ -7,8 +7,8 @@ state={
 	}
 
 	history={
-		owner = SIN
-		add_core_of = SIN
+		owner = CHI
+		add_core_of = CHI
 		buildings = {
 			infrastructure = 7
 			arms_factory = 1
@@ -21,7 +21,6 @@ state={
 			}
 
 		}
-		add_core_of = CHI
 
 	}
 

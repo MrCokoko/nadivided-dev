@@ -12,6 +12,7 @@ state={
 			industrial_complex = 1
 
 		}
+		owner = LEG
 		add_core_of = LEG
 		victory_points = {
             7568 3

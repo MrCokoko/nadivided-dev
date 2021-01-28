@@ -9,8 +9,8 @@ state={
 	}
 
 	history={
-		owner = SIL
-		add_core_of = SIL
+		owner = FAM
+		add_core_of = FAM
 		buildings = {
 			industrial_complex = 4
 			arms_factory = 2
