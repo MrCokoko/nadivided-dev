@@ -15,7 +15,7 @@ state={
 
 		}
 		victory_points = {
-            3982 2
+            3982 3
         }
 		# add_core_of = SNU
 

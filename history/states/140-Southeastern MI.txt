@@ -10,12 +10,13 @@ state={
 	history={
 		owner = TOL
 		add_core_of = TOL
-		# add_core_of = TOL
 		buildings = {
 			infrastructure = 9
 			industrial_complex = 1
 			arms_factory = 1
+
 		}
+
 	}
 
 	provinces={

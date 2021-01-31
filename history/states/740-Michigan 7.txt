@@ -1,14 +1,18 @@
-state = {
-    id = 740
-    name = "STATE_740"
-    provinces = {
-        2390 2401 7866 7867 7869 7871 7874 7879
-    }
-    history = {
-        owner = MMG
-        add_core_of = MMG
-    }
-    manpower = 10
-    buildings_max_level_factor=1.000
-    state_category = rural
+
+state={
+	id=740
+	name="STATE_740"
+
+	history={
+		owner = MMG
+		add_core_of = MMG
+
+	}
+
+	provinces={
+		2390 7866 7867 7871 7874 7879 
+	}
+	manpower=10
+	buildings_max_level_factor=1.000
+	state_category=rural
 }

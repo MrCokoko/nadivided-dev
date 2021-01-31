@@ -8,6 +8,9 @@ state = {
         owner = LEG
         add_core_of = LEG
         # add_core_of = LEG
+        victory_points = {
+            3954 2
+        }
         buildings = {
             infrastructure = 2
         }

@@ -9,6 +9,7 @@ state = {
         add_core_of = SOH
         victory_points = {
             7699 3
+        }
         buildings = {
             infrastructure = 4
         }

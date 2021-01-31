@@ -8,9 +8,8 @@ state = {
         owner = SNU
         add_core_of = SNU
         victory_points = {
-            2131 3
-        owner = SOH
-        add_core_of = SOH
+            2131 5
+        }
         # add_core_of = SNU
         buildings = {
             infrastructure = 4

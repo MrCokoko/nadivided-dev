@@ -1,15 +1,18 @@
-state = {
-    id = 734
-    name = "STATE_734"
-    provinces = {
-        3992 7843 7844 7845 7846 7853 7854
-    }
-    history = {
-        owner = TOL
-        add_core_of = TOL
-        # add_core_of = TOL
-    }
-    manpower = 10
-    buildings_max_level_factor=1.000
-    state_category = town
+
+state={
+	id=734
+	name="STATE_734"
+
+	history={
+		owner = TOL
+		add_core_of = TOL
+
+	}
+
+	provinces={
+		3992 7843 7844 7845 7846 7853 7854 
+	}
+	manpower=10
+	buildings_max_level_factor=1.000
+	state_category=town
 }

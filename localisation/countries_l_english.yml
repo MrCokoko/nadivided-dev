@@ -2204,7 +2204,7 @@ LEG_longism_ADJ:0 "Longist"
 OOH_fascism:1 "Ohioan Reich"
 OOH_fascism_DEF:1 "The Ohian Reich"
 OOH_fascism_ADJ:0 "Reichskommissariat"
-OOH_neutrality:0 "Ohioan"
+OOH_neutrality:0 "Occupied Ohio"
 OOH_neutrality_DEF:0 "The Provisional Government of Occupied Ohio"
 OOH_neutrality_ADJ:0 "Ohioan"
 OOH_communism:1 "Ohio Soviet Republic"
@@ -2427,11 +2427,13 @@ GRA_progressivism_DEF:1 "Grand Rapids"
 GRA_progressivism_ADJ:0 "Grand Rapidian"
 GRA_longism:0 "Grand Rapids"
 GRA_longism_DEF:0 "Grand Rapids"
+
 ######################################
 ###                                ###
 ###        Ghosty's Tags           ###
 ###                                ###
 ######################################
+
 LAF_fascism:1 "STOP CHEATING"
 LAF_fascism_DEF:1 "STOP CHEATING"
 LAF_democratic:1 "Democratic Federation of Latin America"
