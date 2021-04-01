@@ -1,32 +1,5 @@
 spriteTypes = {
-
-	#spriteType = {
-	#	name = "GFX_ideology_unknown"
-	#	texturefile = "gfx/interface/ideologies/unknown.dds"
-	#	legacy_lazy_load = no #not needed
-	#}
-
-	#Modded#
-
-	spriteType = {
-		name = "GFX_ideology_progressivism_group"
-		texturefile = "gfx/interface/ideologies/progressivism_group.dds"
-	}
-	spriteType = {
-		name = "GFX_ideology_roosevelt_progressivism"
-		texturefile = "gfx/interface/ideologies/roosevelt_progressivism.dds"
-	}
-	spriteType = {
-		name = "GFX_ideology_longism_group"
-		texturefile = "gfx/interface/ideologies/longism_group.dds"
-	}
-	spriteType = {
-		name = "GFX_ideology_sovietmonarchism"
-		texturefile = "gfx/interface/ideologies/sovietmonarchism.dds"
-	}
-
-	#Not Modded#
-
+	
 	#Government in Exile
 
 	spriteType = {
@@ -589,6 +562,7 @@ spriteTypes = {
 		name = "GFX_leader_unknown"
 		textureFile = "gfx/leaders/leader_unknown.dds"
 		legacy_lazy_load = no
+		generate_mip_maps = yes
 	}
 	
 	spriteType = {
@@ -672,4 +646,5 @@ spriteTypes = {
 		alwaystransparent = yes
 		effectFile = "gfx/FX/buttonstate_blendframes.lua"
 	}
+	
 }

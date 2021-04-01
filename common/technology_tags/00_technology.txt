@@ -86,9 +86,6 @@ technology_categories = {
 	naval_minesweeping
 	naval_minelaying
 	cat_scout_plane
-
-	###MODDED###
-	bicycle_tech
 }
 
 technology_folders = {

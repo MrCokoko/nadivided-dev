@@ -1,7 +1,7 @@
 ﻿division_template = {
-	name = "Infantry"
+	name = "Infantry Division"		
 
-	division_names_group = USA_INF_01
+	division_names_group = SIA_INF_01
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -13,24 +13,80 @@
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
- 		infantry = { x = 3 y = 0 }
 	}
-	priority = 1
 }
 
+
 units = {
+	######## LAND OOB ########
+	##### Royal Siamese Army #####
 	division = {
-		division_name = {
+		#name = "1st Division"
+		division_name = {    # New syntax for compatibility with name lists
 			is_name_ordered = yes
 			name_order = 1
 		}
-		location = 2322
-		division_template = "Infantry"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		location = 7408
+		division_template = "Infantry Division"		
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
 	}
-} 
-### Starting Equipment ###
+	division = {
+		#name = "2nd Division"
+		division_name = {    # New syntax for compatibility with name lists
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 7236
+		division_template = "Infantry Division"		
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
+	}
+	division = {
+		#name = "3rd Division"
+		division_name = {    # New syntax for compatibility with name lists
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 7292
+		division_template = "Infantry Division"		
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
+	}
+	division = {
+		#name = "4th Division"
+		division_name = {    # New syntax for compatibility with name lists
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 12264
+		division_template = "Infantry Division"		
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+
+	}
+}
+
+air_wings = {
+	### Royal Siamese Air Force ###
+	289 = {
+		# 1st Air Wing -- Curtis Hawks
+		# 2nd Air Wing -- French WWI biplanes (SPAD.XIII, Ni.23)
+		fighter_equipment_0 =  {
+			owner = "SIA" 
+			amount = 60
+		}
+		# 3rd Air Wing -- Vought V-93Ss
+		CAS_equipment_1 =  {
+			owner = "SIA" 
+			amount = 12
+		}
+	}
+}
+
 instant_effect = {
 	add_equipment_production = {
 		equipment = {
@@ -38,7 +94,7 @@ instant_effect = {
 			creator = "SIA"
 		}
 		requested_factories = 1
-		progress = 0.28
+		progress = 0.27
 		efficiency = 100
 	}
 }

@@ -2,27 +2,6 @@ ideas = {
 
 	hidden_ideas = {
 
-		generic_acceptance_of_all_diplomacy = {
-			allowed = {
-				always = yes
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			modifier = {
-				communism_acceptance = 20
-				democratic_acceptance = 20
-				fascism_acceptance = 20
-				neutrality_acceptance = 20
-				longism_acceptance = 20
-				progressivism_acceptance = 20
-			}
-		}
-
 		continuous_naval_production = {
 			allowed = {
 				always = no
@@ -112,77 +91,17 @@ ideas = {
 					instant = yes
 					build_cost_ic = -0.10
 				}
+				scout_plane_equipment = {
+					instant = yes
+					build_cost_ic = -0.10	
+				}
 			}		
 		}
 	}
 
 	# Special ones that can be applied on other countries through focus system.
 	country = {
-
-		GEN_professional_garrisonsidea = {
-            picture = GFX_
-			
-			allowed = {
-			}
-			
-			available = {
-
-			}
-			
-            allowed_civil_war = {
-                always = no
-            }
-
-            removal_cost = -1
-
-            modifier = {
-				resistance_damage_to_garrison = -0.25
-				compliance_gain = 0.25
-			}
-		}
-
-		GEN_Fanatical_Ideologicalismidea = {
-            picture = GFX_
-			
-			allowed = {
-			}
-			
-			available = {
-
-			}
-			
-            allowed_civil_war = {
-                always = no
-            }
-
-            removal_cost = -1
-
-            modifier = {
-				army_core_defence_factor = 0.10
-			}
-		}
-
-		GEN_intellectual_property_integrityidea = {
-            picture = GFX_
-			
-			allowed = {
-			}
-			
-			available = {
-
-			}
-			
-            allowed_civil_war = {
-                always = no
-            }
-
-            removal_cost = -1
-
-            modifier = {
-				research_speed_factor = 0.05
-			}
-		}
-
+	
 		nationalism = {
 			
 			allowed = {
@@ -200,27 +119,6 @@ ideas = {
 			
 			modifier = {
 				fascism_drift = 0.1
-			}
-		}
-		workers_union = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = communism
-			}
-
-			removal_cost = -1
-
-			picture = generic_goods_red_bonus
-
-
-			modifier = {
-				industrial_capacity_factory = 0.05
-				local_resources_factor = 0.05
-				production_speed_buildings_factor = 0.1
 			}
 		}
 		MTG_TEST_NAVAL_IDEA = { #MTG_TODO_GABRIEL: remove before shipping
@@ -346,7 +244,22 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-			
+				OR = {
+					AND = {
+						tag = GER
+						has_government = fascism
+						SOV = {
+							has_government = communism
+						}
+					}
+					AND = {
+						tag = SOV
+						has_government = communism
+						GER = {
+							has_government = fascism
+						}
+					}
+				}
 			}
 
 			removal_cost = -1
@@ -505,11 +418,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				OR = {
-					has_government = democratic
-					has_government = progressivism
-					has_government = longism
-				}
+				has_government = democratic
 			}
 			
 			removal_cost = -1
@@ -518,7 +427,6 @@ ideas = {
 	
 			modifier = {
 				trade_opinion_factor = 0.2
-				weekly_manpower = 200
 			}
 		}
 	
@@ -530,8 +438,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				# has_government = fascism
-				always = yes
+				has_government = fascism
 			}
 			
 			removal_cost = -1
@@ -540,8 +447,7 @@ ideas = {
 	
 			modifier = {
 				conscription = 0.05
-				resistance_damage_to_garrison = -0.15
-				weekly_manpower = 100
+				resistance_damage_to_garrison = -0.1 
 			}
 		}
 	
@@ -564,7 +470,7 @@ ideas = {
 			picture = generic_manpower_bonus
 	
 			modifier = {
-				conscription = 0.04
+				conscription = 0.02
 			}
 		}
 	
@@ -637,7 +543,6 @@ ideas = {
 				war_support_factor = 0.05
 				army_core_attack_factor = 0.1
 				army_core_defence_factor = 0.1
-				weekly_manpower = 100
 			}
 		}
 	
@@ -1092,7 +997,6 @@ ideas = {
 			}
 		}	
 
-		# FIXED FOR 1.9 
 		idea_weapons_for_the_resistance = {
 
 			allowed = {
@@ -1112,7 +1016,6 @@ ideas = {
 				resistance_damage_to_garrison_on_our_occupied_states = 0.25 
 			}
 		}	
-		
 		MTG_naval_treaty_adherent = {
 
 			allowed = {
@@ -1200,17 +1103,24 @@ ideas = {
 		generic_communist_revolutionary = {
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				NOT = { OR = { tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = CZE tag = ROM tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR } }
 				NOT = {
 					has_available_idea_with_traits = { idea = communist_revolutionary limit = 1 }
+				}
+				if = {
+					limit = { has_dlc = "Battle for the Bosporus" }
+					NOT = { tag = TUR tag = GRE }
 				}
 			}
 
 			available = {
+				if = {
+					limit = { 
+						original_tag = NZL
+						has_dlc = "Together for Victory"
+					}
+					has_completed_focus = NZL_the_lee_affair
+				}
 				if = {
 					limit = { has_dlc = "Man the Guns" }	
 					NOT = { has_autonomy_state = autonomy_supervised_state }
@@ -1231,31 +1141,41 @@ ideas = {
 	
 			ai_will_do = {
 				factor = 0
-				modifier = {
-					add = 100
-					has_completed_focus = GEN_sieze_the_means_of_production
-				}
 			}
 		}
 			
 		generic_democratic_reformer = {
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				NOT = { OR = { tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = CZE tag = PRC tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR } }
 				NOT = {
 					has_available_idea_with_traits = { idea = democratic_reformer limit = 1 }
+				}
+				if = {
+					limit = { has_dlc = "Battle for the Bosporus" }
+					NOT = { tag = TUR tag = GRE }
 				}
 			}
 			
 			available = {
 				if = {
+					limit = { 
+						original_tag = NZL
+						has_dlc = "Together for Victory"
+					}
+					OR = {
+						has_completed_focus = NZL_strengthen_the_commonwealth
+						has_completed_focus = NZL_constitution_amendment_act
+					}
+				}
+				if = {
 					limit = { has_dlc = "Man the Guns" }	
 					NOT = { has_autonomy_state = autonomy_supervised_state }
 				}
+				if = {
+					limit = { has_dlc = "La Resistance" }	
+					NOT = { original_tag = POR }
+			}
 			}
 
 			
@@ -1273,27 +1193,30 @@ ideas = {
 	
 			ai_will_do = {
 				factor = 0
-				modifier = {
-					add = 100
-					has_completed_focus = GEN_adopt_the_constitution
-				}
 			}
 		}
 		
 		generic_fascist_demagogue = {
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				NOT = { OR = { tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = ROM tag = CZE tag = PRC tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR original_tag = POR } }
 				NOT = {
 					has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 }
+				}
+				if = {
+					limit = { has_dlc = "Battle for the Bosporus" }
+					NOT = { tag = TUR tag = GRE }
 				}
 			}
 			
 			available = {
+				if = {
+					limit = { 
+						original_tag = NZL
+						has_dlc = "Together for Victory"
+					}
+					has_completed_focus = NZL_in_the_darkness
+				}
 				if = {
 					limit = { has_dlc = "Man the Guns" }	
 					NOT = { has_autonomy_state = autonomy_supervised_state }
@@ -1314,93 +1237,59 @@ ideas = {
 	
 			ai_will_do = {
 				factor = 0
-				modifier = {
-					add = 100
-					has_completed_focus = GEN_take_advantage_of_the_chaos
-				}
 			}
 		}
-		generic_progressive_reformer = {
-			
-			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+
+		generic_head_of_intelligence = {
+			allowed = { 
+				has_dlc = "La Resistance"
+				# china gets a special one via focus
+				NOT = { original_tag = CHI }
+				NOT = { is_chinese_warlord = yes }
+				if = {
+					limit = {
+						has_dlc = "Battle for the Bosporus"
+					}
+					NOT = {
+						tag = GRE
+						tag = TUR
 					}
 				}
-				NOT = {
-					has_available_idea_with_traits = { idea = progressive_reformer limit = 1 }
-				}
 			}
-			
-			available = {
-				if = {
-					limit = { has_dlc = "Man the Guns" }	
-					NOT = { has_autonomy_state = autonomy_supervised_state }
-				}				
-			}
-			
-			traits = { progressive_reformer }
-	
-			on_add = {
-				#country_event = political.7
-			}
-	
-			do_effect = {
-				NOT = {
-					has_government = progressivism
-				}
-			}
-	
-			ai_will_do = {
-				factor = 0
-				modifier = {
-					add = 100
-					has_completed_focus = GEN_create_a_better_union
-				}
-			}
-		}
-		generic_populist_demagogue = {
-			
-			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+			visible = {
+				OR = {
+					has_idea = generic_head_of_intelligence
+					NOT = {
+						OR = {
+							# ignore if a (historical) minister already available
+							has_allowed_idea_with_traits = { 
+								idea = head_of_intelligence 
+								limit = 1
+								ignore = generic_head_of_intelligence
+							}
+							# ignore if the other one is already taken
+							has_idea_with_trait = head_of_intelligence
+						}
 					}
 				}
-				NOT = {
-					has_available_idea_with_traits = { idea = populist_reformer limit = 1 }
-				}
 			}
-			
 			available = {
-				if = {
-					limit = { has_dlc = "Man the Guns" }	
-					NOT = { has_autonomy_state = autonomy_supervised_state }
-				}				
+				has_intelligence_agency = yes
 			}
-			
-			traits = { populist_reformer }
-	
-			on_add = {
-				#country_event = political.7
-			}
-	
-			do_effect = {
-				NOT = {
-					has_government = longism
-				}
-			}
-	
+			traits = { head_of_intelligence }
+
 			ai_will_do = {
-				factor = 0
+				factor = 1
 				modifier = {
-					add = 100
-					has_completed_focus = GEN_ban_public_opposition
+					has_intelligence_agency = no
+					factor = 0
 				}
 			}
+
 		}
 	}
+		
+	
 
 	# TECHNOLOGY
 	tank_manufacturer = { 
@@ -1412,13 +1301,36 @@ ideas = {
 			picture = generic_tank_manufacturer_1
 			
 			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = BEL tag = CZE } }
 				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+					has_available_idea_with_traits = { idea = tank_manufacturer limit = 1 }
+				}
+				NOT = {
+					AND = {
+						OR = { tag = AST tag = SAF tag = NZL tag = CAN }
+						has_dlc = "Together for Victory"
 					}
 				}
 				NOT = {
-					has_available_idea_with_traits = { idea = tank_manufacturer limit = 1 }
+					AND = {
+						OR = {
+							is_literally_china = yes
+							tag = MAN
+						}
+						has_dlc = "Waking the Tiger"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = MEX }
+						has_dlc = "Man the Guns"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = BUL tag = GRE tag = TUR }
+						has_dlc = "Battle for the Bosporus"
+					}
 				}
 			}
 			
@@ -1442,13 +1354,39 @@ ideas = {
 			picture = generic_naval_manufacturer_1
 
 			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = SWE tag = HUN tag = CZE } }
 				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+					has_available_idea_with_traits = { idea = naval_manufacturer limit = 1 }
+				}
+				NOT = {
+					AND = {
+						OR = { tag = AST tag = CAN tag = NZL tag = RAJ }
+						has_dlc = "Together for Victory"
 					}
 				}
 				NOT = {
-					has_available_idea_with_traits = { idea = naval_manufacturer limit = 1 }
+					AND = {
+						OR = { tag = CHI tag = PRC tag = MAN tag = SHX tag = XSM tag = GXC tag = YUN tag = SIK tag = MEN }
+						has_dlc = "Waking the Tiger"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = MEX tag = HOL }
+						has_dlc = "Man the Guns"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = SPR tag = SPA tag = SPB tag = SPC tag = SPD }
+						has_dlc = "La Resistance"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = BUL tag = GRE tag = TUR }
+						has_dlc = "Battle for the Bosporus"
+					}
 				}
 			}
 			
@@ -1472,13 +1410,39 @@ ideas = {
 			picture = generic_air_manufacturer_1
 
 			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
 				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+					has_available_idea_with_traits = { idea = light_aircraft_manufacturer limit = 1 }
+				}
+				if = {
+					limit = {
+						has_dlc = "Death or Dishonor"
+					}
+					NOT = { tag = ROM } NOT = { tag = YUG }
+				}
+				NOT = {
+					AND = {
+						OR = { tag = CHI tag = PRC tag = MAN tag = SHX tag = XSM tag = GXC tag = YUN tag = SIK tag = MEN }
+						has_dlc = "Waking the Tiger"
 					}
 				}
 				NOT = {
-					has_available_idea_with_traits = { idea = light_aircraft_manufacturer limit = 1 }
+					AND = {
+						OR = { tag = MEX tag = HOL }
+						has_dlc = "Man the Guns"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = SPR tag = SPA tag = SPB tag = SPC tag = SPD tag = POR}
+						has_dlc = "La Resistance"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = BUL tag = GRE tag = TUR }
+						has_dlc = "Battle for the Bosporus"
+					}
 				}
 			}
 			
@@ -1497,13 +1461,39 @@ ideas = {
 			picture = generic_air_manufacturer_3
 
 			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = ROM } }
 				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+					has_available_idea_with_traits = { idea = medium_aircraft_manufacturer limit = 1 }
+				}
+				if = {
+					limit = {
+						has_dlc = "Death or Dishonor"
+					}
+					NOT = { tag = YUG }
+				}
+				NOT = {
+					AND = {
+						OR = { tag = CHI tag = PRC tag = MAN tag = SHX tag = XSM tag = GXC tag = YUN tag = SIK tag = MEN }
+						has_dlc = "Waking the Tiger"
 					}
 				}
 				NOT = {
-					has_available_idea_with_traits = { idea = medium_aircraft_manufacturer limit = 1 }
+					AND = {
+						OR = { tag = MEX tag = HOL }
+						has_dlc = "Man the Guns"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = SPR tag = SPA tag = SPB tag = SPC tag = SPD tag = POR }
+						has_dlc = "La Resistance"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = BUL tag = GRE tag = TUR }
+						has_dlc = "Battle for the Bosporus"
+					}
 				}
 			}
 			
@@ -1522,13 +1512,39 @@ ideas = {
 			picture = generic_air_manufacturer_2
 			
 			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = CAN tag = ROM } }
 				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+					has_available_idea_with_traits = { idea = heavy_aircraft_manufacturer limit = 1 }
+				}
+				if = {
+					limit = {
+						has_dlc = "Death or Dishonor"
+					}
+					NOT = { tag = YUG }
+				}
+				NOT = {
+					AND = {
+						OR = { tag = CHI tag = PRC tag = MAN tag = SHX tag = XSM tag = GXC tag = YUN tag = SIK tag = MEN }
+						
 					}
 				}
 				NOT = {
-					has_available_idea_with_traits = { idea = heavy_aircraft_manufacturer limit = 1 }
+					AND = {
+						OR = { tag = MEX tag = HOL }
+						has_dlc = "Man the Guns"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = SPR tag = SPA tag = SPB tag = SPC tag = SPD tag = POR }
+						has_dlc = "La Resistance"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = BUL tag = GRE tag = TUR }
+						has_dlc = "Battle for the Bosporus"
+					}
 				}
 			}
 			
@@ -1547,13 +1563,35 @@ ideas = {
 			picture = generic_naval_manufacturer_2
 
 			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = CAN tag = ROM tag = YUG } }
 				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+					has_available_idea_with_traits = { idea = naval_aircraft_manufacturer limit = 1 }
+				}
+				if = {
+					limit = {
+						has_dlc = "Waking the Tiger"
+					}
+					NOT = {
+						OR = { tag = CHI tag = PRC tag = MAN tag = SHX tag = XSM tag = GXC tag = YUN tag = SIK tag = MEN }
 					}
 				}
 				NOT = {
-					has_available_idea_with_traits = { idea = naval_aircraft_manufacturer limit = 1 }
+					AND = {
+						OR = { tag = MEX tag = HOL }
+						has_dlc = "Man the Guns"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = SPR tag = SPA tag = SPB tag = SPC tag = SPD tag = POR }
+						has_dlc = "La Resistance"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = BUL tag = GRE tag = TUR }
+						has_dlc = "Battle for the Bosporus"
+					}
 				}
 			}
 			
@@ -1575,13 +1613,33 @@ ideas = {
 			picture = generic_industrial_concern_1
 
 			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = HUN } }
 				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+					has_available_idea_with_traits = { idea = industrial_concern limit = 1 }
+				}
+				NOT = {
+					AND = {
+						OR = { tag = CHI tag = PRC tag = MAN tag = SHX tag = XSM tag = GXC tag = YUN tag = SIK tag = MEN }
+						has_dlc = "Waking the Tiger"
 					}
 				}
 				NOT = {
-					has_available_idea_with_traits = { idea = industrial_concern limit = 1 }
+					AND = {
+						OR = { tag = MEX tag = HOL }
+						has_dlc = "Man the Guns"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = SPR tag = SPA tag = SPB tag = SPC tag = SPD }
+						has_dlc = "La Resistance"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = BUL tag = GRE tag = TUR }
+						has_dlc = "Battle for the Bosporus"
+					}
 				}
 			}
 			
@@ -1600,13 +1658,36 @@ ideas = {
 			picture = generic_electronics_concern_1
 
 			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
 				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+					has_available_idea_with_traits = { idea = electronics_concern limit = 1 }
+				}
+				NOT = {
+					AND = {
+						has_DLC = "Waking the Tiger"
+						OR = {
+							original_tag = MAN
+							is_literally_china = yes
+						}
 					}
 				}
 				NOT = {
-					has_available_idea_with_traits = { idea = electronics_concern limit = 1 }
+					AND = {
+						OR = { tag = HOL tag = MEX }
+						has_dlc = "Man the Guns"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = SPR tag = SPA tag = SPB tag = SPC tag = SPD }
+						has_dlc = "La Resistance"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = BUL tag = GRE tag = TUR }
+						has_dlc = "Battle for the Bosporus"
+					}
 				}
 			}
 			
@@ -1630,13 +1711,33 @@ ideas = {
 			picture = generic_motorized_equipment_manufacturer_3
 
 			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
 				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+					has_available_idea_with_traits = { idea = motorized_equipment_manufacturer limit = 1 }
+				}
+				NOT = {
+					AND = {
+						OR = { tag = CHI tag = PRC tag = MAN tag = SHX tag = XSM tag = GXC tag = YUN tag = SIK tag = MEN }
+						has_dlc = "Waking the Tiger"
 					}
 				}
 				NOT = {
-					has_available_idea_with_traits = { idea = motorized_equipment_manufacturer limit = 1 }
+					AND = {
+						OR = { tag = HOL }
+						has_dlc = "Man the Guns"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = SPR tag = SPA tag = SPB tag = SPC tag = SPD tag = POR }
+						has_dlc = "La Resistance"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = BUL tag = GRE tag = TUR }
+						has_dlc = "Battle for the Bosporus"
+					}
 				}
 			}
 			
@@ -1655,13 +1756,33 @@ ideas = {
 			picture = generic_infantry_equipment_manufacturer_2
 
 			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = HUN } }
 				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+					has_available_idea_with_traits = { idea = infantry_equipment_manufacturer limit = 1 }
+				}
+				NOT = {
+					AND = {
+						OR = { tag = CHI tag = PRC tag = MAN tag = SHX tag = XSM tag = GXC tag = YUN tag = SIK tag = MEN }
+						has_dlc = "Waking the Tiger"
 					}
 				}
 				NOT = {
-					has_available_idea_with_traits = { idea = infantry_equipment_manufacturer limit = 1 }
+					AND = {
+						OR = { tag = HOL }
+						has_dlc = "Man the Guns"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = SPR tag = SPA tag = SPB tag = SPC tag = SPD tag = POR }
+						has_dlc = "La Resistance"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = BUL tag = GRE tag = TUR }
+						has_dlc = "Battle for the Bosporus"
+					}
 				}
 			}
 			
@@ -1680,13 +1801,33 @@ ideas = {
 			picture = generic_artillery_manufacturer_2
 
 			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
 				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
+					has_available_idea_with_traits = { idea = artillery_manufacturer limit = 1 }
+				}
+				NOT = {
+					AND = {
+						OR = { tag = CHI tag = PRC tag = MAN tag = SHX tag = XSM tag = GXC tag = YUN tag = SIK tag = MEN }
+						has_dlc = "Waking the Tiger"
 					}
 				}
 				NOT = {
-					has_available_idea_with_traits = { idea = artillery_manufacturer limit = 1 }
+					AND = {
+						OR = { tag = HOL }
+						has_dlc = "Man the Guns"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = SPR tag = SPA tag = SPB tag = SPC tag = SPD tag = POR }
+						has_dlc = "La Resistance"
+					}
+				}
+				NOT = {
+					AND = {
+						OR = { tag = BUL tag = GRE tag = TUR }
+						has_dlc = "Battle for the Bosporus"
+					}
 				}
 			}
 			
@@ -1706,11 +1847,7 @@ ideas = {
 		generic_captain_of_industry = {
 
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { captain_of_industry }
@@ -1719,7 +1856,7 @@ ideas = {
 		generic_fortification_engineer = {
 
 			allowed = {
-			
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { fortification_engineer }
@@ -1728,11 +1865,7 @@ ideas = {
 		generic_war_industrialist = {
 
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { war_industrialist }
@@ -1744,11 +1877,7 @@ ideas = {
 		generic_army_chief_off = {
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { army_chief_offensive_1 }
@@ -1757,11 +1886,7 @@ ideas = {
 		generic_army_chief_def = {
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { army_chief_defensive_1 }
@@ -1773,11 +1898,7 @@ ideas = {
 		generic_navy_chief_decisive_bat = {
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { navy_chief_decisive_battle_2 }
@@ -1786,11 +1907,7 @@ ideas = {
 		generic_navy_anti_submarine = {
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { navy_anti_submarine_2 }
@@ -1802,11 +1919,7 @@ ideas = {
 		generic_air_close_air_sup = {
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { air_close_air_support_2 }
@@ -1815,11 +1928,7 @@ ideas = {
 		generic_air_chief_all_weather = {
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { air_chief_all_weather_2 }			
@@ -1829,52 +1938,40 @@ ideas = {
 	high_command = {
 
 		generic_army_art = {
+			ledger = army
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { army_artillery_1 }			
 		}
 		
 		generic_army_log = {
+			ledger = army
 
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { army_logistics_2 }			
 		}
 
 		generic_navy_fleet_log = {
+			ledger = navy
 
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { navy_fleet_logistics_1 }			
 		}
 
 		generic_air_air_combat_trainer = {
+			ledger = air
 
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			traits = { air_air_combat_training_2 }			
@@ -1884,13 +1981,10 @@ ideas = {
 	theorist = {
 
 		generic_military_theorist = {
+			ledger = army
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			research_bonus = {
@@ -1899,15 +1993,12 @@ ideas = {
 			
 			traits = { military_theorist }
 		}
-		
+	
 		generic_naval_theorist = {
+			ledger = navy
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			research_bonus = {
@@ -1918,13 +2009,10 @@ ideas = {
 		}
 
 		generic_air_warfare_theorist = {
+			ledger = air
 			
 			allowed = {
-				NOT = {
-					OR = {
-						has_completed_focus = SPA_embrace_anarchy
-					}
-				}
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
 			}
 			
 			research_bonus = {
@@ -1933,5 +2021,7 @@ ideas = {
 			
 			traits = { air_warfare_theorist }
 		}
+
 	}
+
 }

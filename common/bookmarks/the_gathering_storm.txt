@@ -4,265 +4,528 @@ bookmarks = {
 		desc = "GATHERING_STORM_DESC"
 		date = 1936.1.1.12
 		picture = "GFX_select_date_1936"
-		default_country = "WDC"
+		default_country = "GER"
 		default = yes
 		
-		"SNY"={
-			history = "OTHER_GATHERING_STORM_DESC"
+		"FRA"={
+			history = "FRA_GATHERING_STORM_DESC"
 			ideology = democratic
-		}
-		
-		"SPA"={
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = progressive
-			focuses = {
-				SPA_deal_with_the_stikes
-				SPA_complete_manifest_destiny
-				SPA_embrace_anarchy
-			}
+			available = { NOT = { has_dlc = "La Resistance" } }
 			ideas = {
-				SPA_widespread_strikes
-				SPA_high_unemployment
+				FRA_victors_of_wwi
+				FRA_disjointed_government
+				FRA_protected_by_the_maginot_line
 			}
-		}
-		
-		"SCA"={
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = democratic
-		}
-		
-		"STX"={
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = democratic
 			focuses = {
-				STX_the_state_the_depression_forgot
-				STX_the_second_red_river_war
-				STX_remember_the_alamo
+				FRA_form_the_popular_front
+				FRA_revive_the_national_bloc
+				FRA_france_leads
 			}
+		}
+		"FRA"={
+			history = "FRA_GATHERING_STORM_DESC"
+			ideology = democratic
+			available = { has_dlc = "La Resistance" } 
 			ideas = {
-				STX_weak_texas_rangers
-				STX_booming_oil_industry
-				STX_segregation
+				FRA_victors_of_wwi
+				FRA_disjointed_government
+				FRA_protected_by_the_maginot_line
+			}
+			focuses = {
+				FRA_invite_communist_ministers
+				FRA_utilize_the_leagues
+				FRA_je_suis_la_deluge
+			}
+		}
+		"USA"={
+			history = "USA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				home_of_the_free
+				great_depression
+				undisturbed_isolation
+			}
+			focuses = {
+				USA_war_plan_black
+				USA_limited_intervention
+				USA_reestablish_the_gold_standard
+			}
+		}
+		"ENG"={
+			history = "ENG_GATHERING_STORM_DESC"
+			ideology = democratic
+			available = { has_dlc = "Man the Guns" }
+			ideas = {
+				stiff_upper_lip
+				ENG_the_war_to_end_all_wars
+				george_v
+			}
+			focuses = {
+				ENG_imperial_federation
+				ENG_the_kings_party
+				ENG_organize_the_blackshirts
+			}
+		}
+		"ENG"={
+			history = "ENG_GATHERING_STORM_DESC"
+			ideology = democratic
+			available = { NOT = { has_dlc = "Man the Guns" } }
+			ideas = {
+				stiff_upper_lip
+				ENG_the_war_to_end_all_wars
+				george_v
+			}
+			focuses = {
+				tizard_mission_focus
+				ENG_war_with_germany
+				ENG_war_with_italy
+			}
+		}
+		"GER"={
+			history = "GER_GATHERING_STORM_DESC"
+			ideology = fascism
+			available = { has_dlc = "Waking the Tiger" }
+			ideas = {
+				sour_loser
+				general_staff
+				GER_mefo_bills_1
+			}
+			focuses = {
+				GER_anschluss
+				GER_danzig_or_war
+				GER_revive_the_kaiserreich
+			}
+		}
+		"GER"={
+			history = "GER_GATHERING_STORM_DESC"
+			ideology = fascism
+			available = { NOT = { has_dlc = "Waking the Tiger" } }
+			ideas = {
+				sour_loser
+				general_staff
+				GER_mefo_bills_1
+			}
+			focuses = {
+				GER_anschluss
+				GER_danzig_or_war
+				GER_ussr_war_goal
+			}
+		}
+		"ITA"={
+			history = "ITA_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				vittoria_mutilata
+				victor_emmanuel
+			}	
+			focuses = {
+				ITA_pact_of_steel
+				ITA_spanish_italian_faction
+				ITA_italy_first
+			}		
+		}
+		"JAP"={
+			history = "JAP_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				state_shintoism
+				JAP_zaibatsus
+				JAP_militarism
+			}	
+			focuses = {
+				JAP_the_zero
+				JAP_warrior_spirit
+				JAP_strike_on_the_southern_resource_area
+			}			
+		}
+		"SOV"={
+			history = "SOV_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				trotskyite_plot
+				home_of_revolution
+			}
+			focuses = {
+				SOV_great_purge
+				SOV_claims_on_baltic
+				SOV_war_with_uk
+			}	
+		}
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+
+
+		# minors from DLC ####
+		"POL"={
+			minor = yes
+			history = "POL_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				
+			}
+			focuses = {
+				POL_the_baltic_alliance
+				POL_draw_closer_to_britain
+				POL_seek_accommodation_with_germany
+			}
+		}
+		"CAN"={
+			minor = yes
+			history = "CAN_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				CAN_great_depression_1
+				CAN_conscription_crisis
+			}
+			focuses = {
+				CAN_skewer_the_eagle
+				CAN_north_american_alliance
+				CAN_join_comintern
+			}
+		}
+		"AST"={
+			minor = yes
+			history = "AST_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				AST_great_depression_1
+			}
+			focuses = {
+				AST_never_another_gallipoli
+				AST_support_indonesian_uprising
+				AST_delegation_to_china
+			}
+		}
+		"NZL"={
+			minor = yes
+			history = "NZL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				
+			}
+			focuses = {
+				NZL_bob_semple_tank
+				NZL_independent_new_zealand
+				NZL_maori_volunteers
+			}
+		}
+		"SAF"={
+			minor = yes
+			history = "SAF_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				SAF_ossewabrandwag
+				SAF_history_of_segregation
+			}
+			focuses = {
+				SAF_secure_interests_in_africa
+				SAF_support_the_german_coup
+				SAF_anti_colonialist_crusade
+			}
+		}
+		"RAJ"={
+			minor = yes
+			history = "RAJ_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				RAJ_agrarian_society
+				RAJ_princely_states
+			}
+			focuses = {
+				RAJ_all_india_forward_bloc
+				RAJ_indian_gurkhas
+				RAJ_the_smiling_buddha
+			}
+		}
+		"CZE"={
+			minor = yes
+			history = "CZE_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				CZE_skoda_works
+				CZE_divided_nation
+			}
+			focuses = {
+				CZE_sudeten_1
+				CZE_industrial_legacy
+				CZE_military_research_institute
+			}
+		}
+
+		"HUN"={
+			minor = yes
+			history = "HUN_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				HUN_treaty_of_triannon
+			}
+			focuses = {
+				HUN_proclaim_the_restoration_of_austria_hungary
+				HUN_secret_rearmament
+				HUN_renounce_the_treaty_of_trianon
+			}
+		}
+
+		"ROM"={
+			minor = yes
+			history = "ROM_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				ROM_king_carol_ii_hedonist
+				neutrality_idea
+			}
+			focuses = {
+				ROM_balkans_dominance
+				ROM_institute_royal_dictatorship
+				ROM_preserve_greater_romania
+			}
+		}
+		
+		"YUG"={
+			minor = yes
+			history = "YUG_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				anti_german_military
+				YUG_idea_croatian_opposition
+				YUG_idea_serbian_general_staff
+			}
+			focuses = {
+				YUG_end_the_regency
+				YUG_abolish_the_monarchy
+				YUG_dissolve_serbia
+			}
+		}
+		"CHI"={
+			minor = yes
+			history = "CHI_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				CHI_army_corruption_1
+				CHI_hyper_inflation_1
+				CHI_nine_power_treaty
+			}
+			focuses = {
+				CHI_united_front
+				CHI_army_reform
+				CHI_invite_the_flying_tigers
+			}
+		}
+		"PRC"={
+			minor = yes
+			history = "PRC_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				PRC_the_long_march_1
+				PRC_low_popular_support_3
+				PRC_power_struggles
+			}
+			focuses = {
+				PRC_infiltration
+				PRC_maoism
+				PRC_anti_japanese_expedition
+			}
+		}
+		"MAN"={
+			minor = yes
+			history = "MAN_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				MAN_banditry
+				MAN_kwantung_veto
+				MAN_low_legitimacy_5
+			}
+			focuses = {
+				MAN_obedience
+				MAN_independence_war
+				MAN_claim_the_mandate_of_heaven
+			}
+		}
+		
+		"GXC"={
+			minor = yes
+			history = "WARLORDS_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				PRC_government_corruption
+				CHI_ineffective_bureaucracy_warlord
+			}
+			focuses = {
+				CHI_join_the_republican_government
+				CHI_provoke_border_clashes
+				CHI_join_the_chinese_soviet
+			}
+		}		
+		"YUN"={
+			minor = yes
+			history = "WARLORDS_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				PRC_government_corruption
+				CHI_ineffective_bureaucracy_warlord
+			}
+			focuses = {
+				CHI_join_the_republican_government
+				CHI_provoke_border_clashes
+				CHI_join_the_chinese_soviet
+			}
+		}		
+		"SHX"={
+			minor = yes
+			history = "WARLORDS_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				PRC_government_corruption
+				CHI_ineffective_bureaucracy_warlord
+			}
+			focuses = {
+				CHI_join_the_republican_government
+				CHI_provoke_border_clashes
+				CHI_join_the_chinese_soviet
+			}
+		}		
+		"XSM"={
+			minor = yes
+			history = "WARLORDS_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				PRC_government_corruption
+				CHI_ineffective_bureaucracy_warlord
+			}
+			focuses = {
+				CHI_join_the_republican_government
+				CHI_provoke_border_clashes
+				CHI_join_the_chinese_soviet
+			}
+		}		
+		"SIK"={
+			minor = yes
+			history = "WARLORDS_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				PRC_government_corruption
+				CHI_ineffective_bureaucracy_warlord
+			}
+			focuses = {
+				CHI_join_the_republican_government
+				CHI_provoke_border_clashes
+				CHI_join_the_chinese_soviet
 			}
 		}
 		
 		"MEX"={
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = neutrality
-			focuses = {
-				NA_MEX_deal_with_the_haciendas
-				NA_MEX_claim_aztec_identity
-				NA_MEX_trotsky_siezes_power
-			}
-			ideas = {
-				MEX_rapid_population_growth
-				MEX_exhausted_army
-				MEX_stagnant_industry1
-			}
-		}
-		
-		"MDC"={
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = fascism
-			focuses = {
-				MDC_continue_the_experiment
-				MDC_follow_ataturks_example
-				MDC_rebuild_the_economy
-			}
-			ideas = {
-				MSH_memories_of_the_cristero_war
-				MDC_concessions_to_the_europeans
-			}
-		}
-		
-		"PON"={
-			history = "PON_GATHERING_STORM_DESC"
-			ideology = neutrality
-			ideas = {
-				PON_distrust_in_the_government
-			}
-			focuses = {
-				PON_breakup_of_Canada
-				PON_recover_from_breakup
-				PON_reunited_Canada
-			}
-		}
-		
-		
-		"---"={
-			history = "OTHER_GATHERING_STORM_DESC"
-		}
-		
-		##############
-		##############
-		### MINORS ###
-		##############
-		##############
-		
-		"WDC"={
 			minor = yes
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = neutrality
-			focuses = {
-				WDC_state_of_the_union_address
-				WDC_create_the_minutemen
-				WDC_rebuild_congress
-			}
-		}
-		"SOH"={
-			minor = yes
-			history = "OTHER_GATHERING_STORM_DESC"
+			history = "MEXICO_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
-				SOH_Great_Deppresion
-				SOH_Business_Deadlock
+				MEX_church_power_2
+				MEX_politicised_army
+				MEX_oil_concessions
 			}
 			focuses = {
-				SOH_the_gang
-				SOH_unite_the_river
-				SOH_The_Mob_Takes_Control
-			}
-		}
-		"SMA"={
-			minor = yes
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = democratic
-			ideas = {
-				boston_tea_party_convoy_raiding
-			}
-		}
-		
-		"SID"={
-			minor = yes
-			history = "SID_GATHERING_STORM_DESC"
-			ideology = neutrality
-			ideas = {
-				SID_mining_based_economy
-				SID_potato_crisis
-			}
-			focuses = {
-				SID_dealing_with_stagnation
-				SID_dealing_with_mines
-				SID_potato_propoganda
+				MEX_focus_aztec_eagles
+				MEX_focus_hispanic_alliance
+				MEX_focus_smash_the_bureaucrats
 			}
 		}
 
-		"SNC"={
+		"HOL"={
 			minor = yes
-			history = "OTHER_GATHERING_STORM_DESC"
+			history = "NETHERLANDS_GATHERING_STORM_DESC"
 			ideology = democratic
+			ideas = {
+				HOL_wilhelmina
+				HOL_shell_shocked_spectator_5
+				HOL_de_crisisjaren_5
+			}
 			focuses = {
-				SNC_the_path_to_reunification
+				HOL_continue_the_war_in_batavia
+				HOL_liberation
+				HOL_prepare_the_inundation_lines
 			}
 		}
 
-		"SOR"={
+		"SPR"={
 			minor = yes
-			history = "SOR_GATHERING_STORM_DESC"
+			history = "SPAIN_GATHERING_STORM_DESC"
 			ideology = democratic
 			ideas = {
-				ORE_beaver_state
-				ORE_roaming_commies
+				SPR_military_disloyalty
+				SPA_carlism_1
+				SPR_political_violence
 			}
 			focuses = {
-				SOR_load_in_tree
+				SPA_caudillo_of_spain
+				SPA_no_compromise_on_carlist_ideals
+				SPR_anarchism_knows_no_borders
+			}
+		}
+
+		"POR"={
+			minor = yes
+			history = "PORTUGAL_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				POR_unstable_republic
+				POR_unreliable_army
+			}
+			focuses = {
+				POR_estado_novo
+				POR_workers_of_iberia_unite
+				POR_luso_tropicalism
+			}
+		}
+
+		"BUL"={
+			minor = yes
+			history = "BUL_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				BUL_second_national_catastrophe
+				BUL_army_restrictions
+				BUL_imro_01
+			}
+			focuses = {
+				BUL_the_fatherland_front
+				BUL_restore_the_bulgarian_patriarchate
+				BUL_prussia_of_the_balkans
+			}
+		}
+
+		"GRE"={
+			minor = yes
+			history = "GRE_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				GRE_debt_to_the_ifc
+				GRE_schachtplan
+				GRE_political_instability_dummy
+			}
+			focuses = {
+				GRE_metaxism_focus
+				GRE_resurrecting_the_megali_idea
+				GRE_stage_an_incident_in_the_bosporus
+			}
+		}
+
+		"TUR"={
+			minor = yes
+			history = "TUR_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				TUR_sectarian_woes
+				TUR_disorganised_armed_forces
+				TUR_debt_council
+			}
+			focuses = {
+				TUR_ratify_the_six_arrows
+				TUR_reaffirm_the_balkan_pact
+				TUR_pivot_to_the_past
 			}
 		}
 		
-		"SFL"={
-			minor = yes
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = neutrality
-			focuses = {
-				
-			}
-		}
-		
-		"SNJ"={
-			minor = yes
-			history = "SNJ_GATHERING_STORM_DESC"
-			ideology = neutrality
-			ideas = {
-				NJ_the_last_state
-			}
-			focuses = {
-				NJ_macarthur_shall_return
-				NJ_anothertrenton
-				NJ_demilitarizethelineland
-			}
-		}
-		"CUB" = {
-			minor = yes
-			history = "CUBA_GATEHRING_STORM_DESC"
-			ideology = democratic
-			focuses = {
-				CUB_marine_supremacy
-				CUB_a_long_term_president
-				CUB_leader_of_the_carribbean
-			}
-		}
-		"SGA"= {
-			minor = yes
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = democratic
-			focuses = {
-				SGA_kingcotton
-				SGA_1938election
-				SGA_kingcottonsknights
-			}
-		}
-		"GRE" = {
-			minor = yes
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = neutrality
-			ideas = {
-				GRE_isolation
-				GRE_strained_resources
-			}
-			focuses = {
-				
-			}
-		}
-		"NYC" = {
-			minor = yes
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = democratic
-			ideas = {
-				NYC_Food_Crisis
-				NYC_Organized_Crime
-				NYC_NYPD_Corruption
-			}
-			focuses = {
-				NYC_Install_Fred_Trump_As_leader
-				NYC_Wall_street_will_burn
-				NYC_Limited_Reopening_of_Wall_Street
-			}
-		}
-		"PAB" = {
-			minor = yes
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = democratic
-			ideas = {
-				PAB_wheat_board
-				PAB_unprofessional_army
-				PAB_immigration_dried_up
-			}
-			focuses = {
-				PAB_Have_the_Youth_Work_in_the_Mines
-				PAB_Construct_Booze_factories
-				PAB_Economic_stimulus_Program
-			}
-		}
-		"PBC" = {
-			minor = yes
-			history = "OTHER_GATHERING_STORM_DESC"
-			ideology = neutrality
-			focuses = {
-				PBC_Fight_against_Government_Corrution
-				PBC_Garage_Workshops
-				PBC_Alaska_Is_Rightfully_Ours
-			}
-		}
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }

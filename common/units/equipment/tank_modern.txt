@@ -4,6 +4,12 @@ equipments = {
 	modern_tank_equipment = {
 		year = 1934
 
+		can_be_produced = {
+			NOT = {
+				has_idea = BUL_army_restrictions
+			}
+		}
+
 		is_archetype = yes
 		is_convertable = yes
 		picture = archetype_modern_tank_equipment			
@@ -39,7 +45,7 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 14
 		
-		build_cost_ic = 56
+		build_cost_ic = 28
 		resources = {
 			#oil = 1
 			steel = 3
@@ -60,6 +66,12 @@ equipments = {
 
 	modern_tank_artillery_equipment = {
 		year = 1934
+
+		can_be_produced = {
+			NOT = {
+				has_idea = BUL_army_restrictions
+			}
+		}
 
 		is_archetype = yes
 		is_convertable = yes
@@ -98,7 +110,7 @@ equipments = {
 		ap_attack = 10
 		air_attack = 0
 
-		build_cost_ic = 57
+		build_cost_ic = 28
 		
 		resources = {
 			#oil = 1
@@ -121,6 +133,12 @@ equipments = {
 
 	modern_tank_destroyer_equipment = {
 		year = 1934
+
+		can_be_produced = {
+			NOT = {
+				has_idea = BUL_army_restrictions
+			}
+		}
 
 		is_archetype = yes
 		is_convertable = yes
@@ -159,7 +177,7 @@ equipments = {
 		air_attack = 0
 
 		
-		build_cost_ic = 57
+		build_cost_ic = 28
 		
 		resources = {
 			#oil = 1
@@ -182,6 +200,12 @@ equipments = {
 
 	modern_tank_aa_equipment = {
 		year = 1934
+
+		can_be_produced = {
+			NOT = {
+				has_idea = BUL_army_restrictions
+			}
+		}
 
 		is_archetype = yes
 		is_convertable = yes
@@ -219,7 +243,7 @@ equipments = {
 		ap_attack = 100
 		air_attack = 50
 		
-		build_cost_ic = 57
+		build_cost_ic = 28
 		
 		resources = {
 			#oil = 1

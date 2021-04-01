@@ -1,26 +1,49 @@
-#MEX_soviet_civil_war = {
+MEX_category_military_issues = {
 
-#    icon = decision_category_power_struggle
+	icon = border_conflicts
 
-#    allowed = {
-#        original_tag = MEX
-#    }
-#    visible = {
-#        MEX = {
-#            has_completed_focus = NA_MEX_trigger_a_civil_war
-#        }
-#    }
-#}
-MEX_remove_exhausted_army = {
-    
-    icon = decision_category_army_reform
+	priority = 95
 
-    allowed = {
-        original_tag = MEX
-    }
-    visible = {
-        MEX = {
-            has_completed_focus = NA_MEX_continue_the_6_year_plan
-        }
-    }
+	allowed = {
+		has_dlc = "Man the Guns"
+		original_tag = MEX
+	}
 }
+
+MEX_category_territorial_integration = {
+
+	icon = border_war
+
+	priority = 90
+
+	allowed = {
+		has_dlc = "Man the Guns"
+		original_tag = MEX
+	}
+}
+
+MEX_category_church_power = {
+
+	icon = power_struggle
+
+	priority = 80
+
+	allowed = {
+		has_dlc = "Man the Guns"
+		original_tag = MEX
+	}
+}
+
+MEX_category_hispanic_solidarity = {
+
+	icon = generic_political_actions
+
+	priority = 90
+
+	allowed = {
+		has_dlc = "Man the Guns"
+		original_tag = MEX
+	}
+}
+
+

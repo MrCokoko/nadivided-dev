@@ -44,33 +44,46 @@
 #	# trigger 3
 #	# ...
 #}
+
+SPA = {
+	original_tag = SPR
+	has_country_flag = SPR_nationalist_spain_flag
+}
+
+SPB = {
+	original_tag = SPR
+	has_country_flag = SPR_carlist_spain_flag
+}
+
+SPC = {
+	original_tag = SPR
+	has_country_flag = SPR_anarchist_spain_flag
+}
+
+SPD = {
+	original_tag = SPR
+	has_country_flag = SPR_republican_spain_flag
+}
+
+VIC = {
+	original_tag = FRA
+	has_focus_tree = vichy_french_focus
+}
+
+BUZ = {
+	original_tag = BUL
+	has_country_flag = BUL_zveno_bulgaria_flag
+}
+
+BUF = {
+	original_tag = BUL
+	has_country_flag = BUL_fatherland_front_flag
+}
+
 # operative operation target
 # only set for majors who has agency
 # set on on_weekly
 MOT = {
 	variable = generic_operation_target
 }
-SRO = {
-	original_tag = SOR
-	has_country_flag = SOR_socialist_oregon_flag
-}
-URO = {
-	original_tag = SOR
-	has_country_flag = SOR_unitary_oregon_flag
-}
-POO = {
-	original_tag = SOR
-	has_country_flag = SOR_portland_flag
-}
-COR = {
-	original_tag = SOR
-	has_country_flag = SOR_catholic_oregon_flag
-}
-PCA = {
-	original_tag = SOR
-	has_country_flag = SOR_provisional_cascadia_flag
-}
-KKK = {
-	original_tag = SOR
-	has_country_flag = SOR_racist_oregon_flag
-}
+

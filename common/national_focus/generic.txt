@@ -1,20 +1,31 @@
 ﻿search_filter_prios = {
 	FOCUS_FILTER_POLITICAL = 1010
+
+	
+ 
+	
+	
 	FOCUS_FILTER_RESEARCH = 522
+
+	
 	FOCUS_FILTER_INDUSTRY = 509
+
 }
+
 focus_tree = {
 	id = generic_focus
 	
 	country = {
 		factor = 1
 	}
+	
 	default = yes
 	reset_on_civilwar = no
 
 	initial_show_position = {
 		focus = industrial_effort
 	}
+
 	focus = {
 		id = army_effort
 		icon = GFX_goal_generic_allies_build_infantry
@@ -22,10 +33,11 @@ focus_tree = {
 		y = 0
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
-			army_experience = 75
+			army_experience = 5
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 1.0
@@ -45,6 +57,7 @@ focus_tree = {
 		cost = 10
 
 		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -68,6 +81,8 @@ focus_tree = {
 		relative_position_id = army_effort
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -88,6 +103,8 @@ focus_tree = {
 		relative_position_id = army_effort
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -110,6 +127,8 @@ focus_tree = {
 		relative_position_id = equipment_effort
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -131,6 +150,8 @@ focus_tree = {
 		y = 2
 		relative_position_id = motorization_effort
 		cost = 10
+		
+		search_filters = {  FOCUS_FILTER_RESEARCH }
 
 		available_if_capitulated = yes
 
@@ -153,6 +174,8 @@ focus_tree = {
 		relative_position_id = doctrine_effort
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -167,60 +190,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = GEN_Mass_Conscription_effort
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = doctrine_effort_2 }
-		x = 3
-		y = 6
-		relative_position_id = doctrine_effort2
-		cost = 10
-
-		available = {
-					date > 1938.1.1
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 100
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_timed_idea = { idea = GEN_Mass_Conscription_effort_idea  days = 400 }
-		}
-	}
-
-	focus = {
-		id = GEN_professional_garrisons
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = doctrine_effort }
-		x = 2
-		y = 2
-		relative_position_id = doctrine_effort
-		cost = 10
-
-		available = {
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 100
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = GEN_professional_garrisonsidea
-
-		}
-	}
-
-	focus = {
 		id = equipment_effort_3
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = equipment_effort_2 }
@@ -229,6 +198,8 @@ focus_tree = {
 		relative_position_id = equipment_effort_2
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -251,6 +222,8 @@ focus_tree = {
 		relative_position_id = mechanization_effort
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -274,6 +247,8 @@ focus_tree = {
 		relative_position_id = equipment_effort_3
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -295,15 +270,14 @@ focus_tree = {
 	focus = {
 		id = aviation_effort
 		icon = GFX_goal_generic_build_airforce
-		x = 6
+		x = 5
 		y = 0
 		cost = 10
+		
+		search_filters = {   FOCUS_FILTER_RESEARCH }
 
 		available_if_capitulated = yes
 
-			modifier = {
-				factor = 25
-			}
 
 		complete_tooltip = {
 			air_experience = 25
@@ -388,6 +362,8 @@ focus_tree = {
 		relative_position_id = aviation_effort
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -403,7 +379,6 @@ focus_tree = {
 				technology = heavy_fighter2
 				technology = heavy_fighter3
 			}
-			air_experience = 50
 		}
 	}
 
@@ -417,6 +392,8 @@ focus_tree = {
 		relative_position_id = aviation_effort
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -429,7 +406,6 @@ focus_tree = {
 				technology = strategic_bomber3
 				category = tactical_bomber
 			}
-			air_experience = 50
 		}
 	}
 
@@ -442,6 +418,8 @@ focus_tree = {
 		relative_position_id = bomber_focus
 		cost = 10
 
+		search_filters = {   FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 
@@ -530,6 +508,8 @@ focus_tree = {
 		relative_position_id = aviation_effort_2
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -553,6 +533,8 @@ focus_tree = {
 		relative_position_id = aviation_effort_2
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -584,6 +566,8 @@ focus_tree = {
 		relative_position_id = aviation_effort_2
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -600,19 +584,19 @@ focus_tree = {
 	focus = {
 		id = naval_effort
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 10
+		x = 9
 		y = 0
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_INDUSTRY }
+		
 		available_if_capitulated = yes
 
-			modifier = {
-				factor = 25
-			}
 
 		available = {
-			any_owned_state = {
+			any_state = {
 				is_coastal = yes
+				is_controlled_by = ROOT
 			}
 		}
 
@@ -734,6 +718,8 @@ focus_tree = {
 		y = 1
 		relative_position_id = naval_effort
 		cost = 10
+		
+		search_filters = {  FOCUS_FILTER_RESEARCH }
 
 		available_if_capitulated = yes
 
@@ -774,6 +760,8 @@ focus_tree = {
 		y = 1
 		relative_position_id = naval_effort
 		cost = 10
+		
+		search_filters = {   FOCUS_FILTER_RESEARCH }
 
 		available_if_capitulated = yes
 
@@ -809,7 +797,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = flexible_navy
 		cost = 10
-
+		
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 
@@ -845,6 +835,8 @@ focus_tree = {
 		y = 1
 		relative_position_id = large_navy
 		cost = 10
+		
+		search_filters = {  FOCUS_FILTER_RESEARCH }
 
 		available_if_capitulated = yes
 
@@ -883,6 +875,8 @@ focus_tree = {
 		relative_position_id = submarine_effort
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
 
 
@@ -919,8 +913,9 @@ focus_tree = {
 		relative_position_id = cruiser_effort
 		cost = 10
 
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
-
 
 		ai_will_do = {
 			factor = 1
@@ -952,15 +947,13 @@ focus_tree = {
 	focus = {
 		id = industrial_effort
 		icon = GFX_goal_generic_production
-		x = 14
+		x = 13
 		y = 0
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		
 		available_if_capitulated = yes
-
-			modifier = {
-				factor = 26
-			}
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -974,8 +967,22 @@ focus_tree = {
 		ai_will_do = {
 			factor = 3
 			modifier = {
-				factor = 0.2
-				date < 1939.1.1			
+				factor = 0
+				date < 1939.1.1
+				OR = { 
+					# we dont want chinese minors to go crazy on slots early since they get eaten
+					tag = GXC 
+					tag = YUN
+					tag = SHX
+					tag = XSM
+					tag = BEL
+					tag = LUX
+					tag = HOL
+					tag = DEN
+
+					# we also dont want tiny nations to go crazy with slots right away
+					num_of_controlled_states < 2
+				}				
 			}
 		}
 	}
@@ -989,6 +996,8 @@ focus_tree = {
 		relative_position_id = industrial_effort
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		
 		available_if_capitulated = yes
 
 
@@ -1003,7 +1012,7 @@ focus_tree = {
 				all_owned_state = {
 					free_building_slots = {
 						building = industrial_complex
-						size < 2
+						size < 1
 						include_locked = yes
 					}					
 				}
@@ -1011,10 +1020,10 @@ focus_tree = {
 		}
 
 		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = industrial_complex
-				level = 2
+				level = 1
 				instant_build = yes
 			}			
 		}
@@ -1024,7 +1033,7 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
-						size > 1
+						size > 0
 						include_locked = yes
 					}
 					OR = {
@@ -1034,7 +1043,7 @@ focus_tree = {
 								any_owned_state = {
 									free_building_slots = {
 										building = industrial_complex
-										size > 1
+										size > 0
 										include_locked = yes
 									}
 									is_in_home_area = yes
@@ -1043,10 +1052,10 @@ focus_tree = {
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1062,6 +1071,8 @@ focus_tree = {
 		relative_position_id = industrial_effort
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		
 		available_if_capitulated = yes
 
 
@@ -1075,7 +1086,7 @@ focus_tree = {
 				all_owned_state = {
 					free_building_slots = {
 						building = arms_factory
-						size < 2
+						size < 1
 						include_locked = yes
 					}
 				}
@@ -1083,10 +1094,10 @@ focus_tree = {
 		}
 
 		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = arms_factory
-				level = 2
+				level = 1
 				instant_build = yes
 			}
 		}
@@ -1096,7 +1107,7 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
-						size > 1
+						size > 0
 						include_locked = yes
 					}
 					OR = {
@@ -1106,7 +1117,7 @@ focus_tree = {
 								any_owned_state = {
 									free_building_slots = {
 										building = arms_factory
-										size > 1
+										size > 0
 										include_locked = yes
 									}
 									is_in_home_area = yes
@@ -1115,10 +1126,10 @@ focus_tree = {
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1134,6 +1145,8 @@ focus_tree = {
 		relative_position_id = construction_effort
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		
 		available_if_capitulated = yes
 
 
@@ -1147,7 +1160,7 @@ focus_tree = {
 				all_owned_state = {
 					free_building_slots = {
 						building = industrial_complex
-						size < 2
+						size < 1
 						include_locked = yes
 					}
 				}
@@ -1155,10 +1168,10 @@ focus_tree = {
 		}
 
 		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = industrial_complex
-				level = 2
+				level = 1
 				instant_build = yes
 			}
 		}		
@@ -1168,7 +1181,7 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
-						size > 1
+						size > 0
 						include_locked = yes
 					}
 					OR = {
@@ -1178,7 +1191,7 @@ focus_tree = {
 								any_owned_state = {
 									free_building_slots = {
 										building = industrial_complex
-										size > 1
+										size > 0
 										include_locked = yes
 									}
 									is_in_home_area = yes
@@ -1187,10 +1200,10 @@ focus_tree = {
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1205,6 +1218,8 @@ focus_tree = {
 		y = 1
 		relative_position_id = production_effort
 		cost = 10
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
 
 		available_if_capitulated = yes
 
@@ -1219,7 +1234,7 @@ focus_tree = {
 				all_owned_state = {
 					free_building_slots = {
 						building = arms_factory
-						size < 2
+						size < 1
 						include_locked = yes
 					}
 				}
@@ -1227,10 +1242,10 @@ focus_tree = {
 		}
 
 		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = arms_factory
-				level = 2
+				level = 1
 				instant_build = yes
 			}
 		}		
@@ -1240,7 +1255,7 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
-						size > 1
+						size > 0
 						include_locked = yes
 					}
 					OR = {
@@ -1250,7 +1265,7 @@ focus_tree = {
 								any_owned_state = {
 									free_building_slots = {
 										building = arms_factory
-										size > 1
+										size > 0
 										include_locked = yes
 									}
 									is_in_home_area = yes
@@ -1259,10 +1274,10 @@ focus_tree = {
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1278,6 +1293,8 @@ focus_tree = {
 		relative_position_id = construction_effort_2
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		
 		available_if_capitulated = yes
 
 		bypass = {
@@ -1286,7 +1303,7 @@ focus_tree = {
 				all_owned_state = {			
 					free_building_slots = {
 						building = infrastructure
-						size < 2
+						size < 1
 					}
 				}
 			}
@@ -1295,12 +1312,12 @@ focus_tree = {
 		complete_tooltip = {
 			add_building_construction = {
 				type = infrastructure
-				level = 2
+				level = 1
 				instant_build = yes
 			}
 			add_building_construction = {
 				type = infrastructure
-				level = 2
+				level = 1
 				instant_build = yes
 			}
 		}
@@ -1310,7 +1327,7 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = infrastructure
-						size > 1
+						size > 0
 					}
 					OR = {
 						is_in_home_area = yes
@@ -1319,7 +1336,7 @@ focus_tree = {
 								any_owned_state = {
 									free_building_slots = {
 										building = infrastructure
-										size > 1
+										size > 0
 									}
 									is_in_home_area = yes
 								}
@@ -1329,7 +1346,7 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1372,6 +1389,8 @@ focus_tree = {
 		relative_position_id = production_effort_2
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		
 		available_if_capitulated = yes
 
 
@@ -1385,7 +1404,7 @@ focus_tree = {
 				all_owned_state = {
 					free_building_slots = {
 						building = arms_factory
-						size < 2
+						size < 1
 						include_locked = yes
 					}					
 				}
@@ -1393,10 +1412,10 @@ focus_tree = {
 		}
 
 		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = arms_factory
-				level = 2
+				level = 1
 				instant_build = yes
 			}
 		}		
@@ -1406,7 +1425,7 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
-						size > 1
+						size > 0
 						include_locked = yes
 					}
 					OR = {
@@ -1416,7 +1435,7 @@ focus_tree = {
 								any_owned_state = {
 									free_building_slots = {
 										building = arms_factory
-										size > 1
+										size > 0
 										include_locked = yes
 									}
 									is_in_home_area = yes
@@ -1425,10 +1444,10 @@ focus_tree = {
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1444,6 +1463,8 @@ focus_tree = {
 		relative_position_id = infrastructure_effort
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		
 		available_if_capitulated = yes
 
 		bypass = {
@@ -1452,7 +1473,7 @@ focus_tree = {
 				all_owned_state = {			
 					free_building_slots = {
 						building = infrastructure
-						size < 2
+						size < 1
 					}
 				}
 			}
@@ -1461,12 +1482,12 @@ focus_tree = {
 		complete_tooltip = {
 			add_building_construction = {
 				type = infrastructure
-				level = 2
+				level = 1
 				instant_build = yes
 			}
 			add_building_construction = {
 				type = infrastructure
-				level = 2
+				level = 1
 				instant_build = yes
 			}
 		}
@@ -1476,7 +1497,7 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = infrastructure
-						size > 1
+						size > 0
 					}
 					OR = {
 						is_in_home_area = yes
@@ -1485,7 +1506,7 @@ focus_tree = {
 								any_owned_state = {
 									free_building_slots = {
 										building = infrastructure
-										size > 1
+										size > 0
 									}
 									is_in_home_area = yes
 								}
@@ -1495,7 +1516,7 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1538,6 +1559,8 @@ focus_tree = {
 		relative_position_id = infrastructure_effort
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		
 		available_if_capitulated = yes
 
 
@@ -1609,6 +1632,8 @@ focus_tree = {
 		y = 1
 		relative_position_id = infrastructure_effort_2
 		cost = 10
+		
+		search_filters = { FOCUS_FILTER_RESEARCH } 
 
 		available_if_capitulated = yes
 
@@ -1638,6 +1663,8 @@ focus_tree = {
 		relative_position_id = infrastructure_effort_2
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -1659,6 +1686,8 @@ focus_tree = {
 		relative_position_id = extra_tech_slot
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -1675,6 +1704,8 @@ focus_tree = {
 		relative_position_id = infrastructure_effort_2
 		cost = 10
 
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -1696,859 +1727,594 @@ focus_tree = {
 			}
 		}
 	}
-###################################################################################################
-#####################################################EDITED CONTENT################################
-###################################################################################################
 
 	focus = {
-		id = GEN_reopen_the_political_sphere
-		icon = GFX_goal_generic_neutrality_focus
-		x = 21
+		id = political_effort
+		icon = GFX_goal_generic_demand_territory
+		x = 19
 		y = 0
 		cost = 10
-
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	
 		available_if_capitulated = yes
 
-		ai_will_do = {
-			factor = 1
-		}
-		allow_branch = {
-			NOT = {
-				tag = TXR
-			}
-		}
-
-			modifier = {
-				factor = 50
-			}
-
 		completion_reward = {
-			add_political_power = 150
+			add_political_power = 120
 		}
 	}
-#
+
 	focus = {
-		id = GEN_ideals_of_the_union
-		icon = GFX_goal_support_democracy
-		prerequisite = { focus = GEN_reopen_the_political_sphere}
-		mutually_exclusive = { focus = GEN_sieze_the_means_of_production }
-		mutually_exclusive = { focus = GEN_take_advantage_of_the_chaos }
-		x = 20
+		id = collectivist_ethos
+		icon = GFX_goal_generic_national_unity #icon = GFX_goal_tripartite_pact
+		prerequisite = { focus = political_effort }
+		mutually_exclusive = { focus = liberty_ethos}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+				has_government = neutrality
+			}
+		}
+		x = -1
 		y = 1
-		cost = 11
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 100
-				has_country_flag = SLA_huey_is_leader
-			}
-			modifier = {
-				factor = 50
-				OR = {
-					has_government = democratic
-					has_government = progressivism
-					has_government = longism
-				}
-			}
-		}
+		relative_position_id = political_effort
+		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL   }
 
 		available_if_capitulated = yes
 
-		completion_reward = {
-			add_popularity = {
-				ideology = democratic
-				popularity = .10
-			}
-			add_timed_idea = { idea = democratic_influence  days = 2000 }
-		}
-	}
-#
-	focus = {
-		id = GEN_adopt_the_constitution
-		icon = GFX_focus_generic_treaty
-		prerequisite = { focus = GEN_ideals_of_the_union}
-		mutually_exclusive = { focus = GEN_rewrite_the_constitution}
-		x = 17
-		y = 2
-		cost = 5
+
 		ai_will_do = {
-			factor = 1
+			factor = 5
 			modifier = {
 				factor = 0
-				has_country_flag = SLA_huey_is_leader
-			}
-			modifier = {
-				factor = 50
-				has_government = democratic
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_stability = 0.1
-		}
-	}
-#
-	focus = {
-		id = GEN_reienstate_free_speech
-		icon = GFX_focus_vote_reenstation_act
-		prerequisite = { focus = GEN_adopt_the_constitution}
-		x = 17
-		y = 3
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_stability = 0.05
-			add_political_power = 50
-			add_popularity = {
-				ideology = democratic
-				popularity = 0.2
-			}
-			add_popularity = {
-				ideology = longism
-				popularity = 0.03
-			}
-			add_popularity = {
-				ideology = progressivism
-				popularity = 0.03
-			}
-			add_popularity = {
-				ideology = communism
-				popularity = 0.01
-			}
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.01
-			}
-			add_popularity = {
-				ideology = neutrality
-				popularity = 0.03
-			}
-		}
-	}
-#
-	focus = {
-		id = GEN_encourage_free_enterprise
-		icon = GFX_goal_generic_investments
-		prerequisite = { focus = GEN_reienstate_free_speech}
-		x = 17
-		y = 4
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-#
-	focus = {
-		id = GEN_forign_intervention
-		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = GEN_encourage_free_enterprise}
-		x = 17
-		y = 5
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			set_rule = { can_send_volunteers = yes }
-			add_ideas = volunteer_corps_focus
-			if = {
-				limit = {
-					is_ai = no
-				}
-				set_rule = {
-					can_create_factions = yes
-				}
-			}
-		}
-	}
-#
-	focus = {
-		id = GEN_intellectual_property_integrity
-		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = GEN_an_iron_fortress focus = GEN_forign_intervention focus = GEN_protect_others}
-		x = 0
-		y = 2
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		relative_position_id = GEN_forign_intervention
-		available_if_capitulated = yes
-
-		available = {
-					date > 1940.1.1
-		}
-
-		completion_reward = {
-			add_ideas = GEN_intellectual_property_integrityidea
-		}
-	}
-#
-	focus = {
-		id = GEN_rewrite_the_constitution
-		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = GEN_ideals_of_the_union}
-		mutually_exclusive = { focus = GEN_adopt_the_constitution}
-		x = 20
-		y = 2
-		cost = 5
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 100
-				has_country_flag = SLA_huey_is_leader
-			}
-			modifier = {
-				factor = 50
 				OR = {
-					has_government = progressivism
-					has_government = longism
+					AND = {
+						is_historical_focus_on = yes
+						has_government = neutrality
+					}
+					has_idea = neutrality_idea
 				}
 			}
 		}
 
-		available_if_capitulated = yes
-
 		completion_reward = {
-			add_political_power = 100
-			add_popularity = {
-				ideology = longism
-				popularity = 0.1
-			}
-			add_popularity = {
-				ideology = progressivism
-				popularity = 0.1
-			}
-			remove_ideas = democratic_influence
+			add_timed_idea = { idea = collectivist_ethos_focus days = 1095 }
 		}
 	}
-#
+
 	focus = {
-		id = GEN_ban_public_opposition
-		icon = GFX_focus_usa_voter_registration_act
-		prerequisite = { focus = GEN_rewrite_the_constitution}
-		mutually_exclusive = { focus = GEN_create_a_better_union}
-		x = 19
-		y = 3
-		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 100
-				has_country_flag = SLA_huey_is_leader
-			}
-			modifier = {
-				factor = 50
-				has_government = longism
+		id = nationalism_focus
+		icon = GFX_goal_support_fascism #icon = GFX_goal_tripartite_pact
+		prerequisite = { focus = collectivist_ethos }
+		mutually_exclusive = { focus = internationalism_focus }
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = neutrality
 			}
 		}
+		x = -2
+		y = 1
+		relative_position_id = collectivist_ethos
+		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL  }
 
 		available_if_capitulated = yes
 
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				any_neighbor_country = {
+					is_major = yes
+					has_government = fascism
+				}
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					is_historical_focus_on = yes
+					NOT = { has_government = fascism }
+				}
+			}
+		}
+
 		completion_reward = {
-			add_stability = -0.07
-			add_popularity = {
-				ideology = longism
-				popularity = 0.25
-			}
-			add_popularity = {
-				ideology = communism
-				popularity = -0.02
-			}
-			add_popularity = {
-				ideology = democratic
-				popularity = -0.05
-			}
-			add_popularity = {
-				ideology = progressivism
-				popularity = -0.05
-			}
-			add_popularity = {
-				ideology = fascism
-				popularity = -0.02
-			}
-			add_popularity = {
-				ideology = neutrality
-				popularity = -0.01
+			add_timed_idea = {
+				idea = nationalism
+				days = 720
 			}
 		}
 	}
-#
+	
 	focus = {
-		id = GEN_ignore_corruption
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		prerequisite = { focus = GEN_ban_public_opposition}
-		x = 19
-		y = 4
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_political_power = 75
-			add_timed_idea = { idea = idea_political_correctness  days = 2000 }
+		id = internationalism_focus
+		icon = GFX_goal_support_communism #icon = GFX_goal_tripartite_pact
+		prerequisite = { focus = collectivist_ethos }
+		mutually_exclusive = { focus = nationalism_focus }
+		available = {
 			if = {
-				limit = {
-					is_ai = no
-				}
-				set_rule = {
-					can_create_factions = yes
+				limit = { original_tag = CHI }
+				has_government = communism
+				else = {
+					OR = {
+						has_government = communism
+						has_government = neutrality
+					}
 				}
 			}
-			set_rule = { can_send_volunteers = yes }
 		}
-	}
-#
-	focus = {
-		id = GEN_an_iron_fortress
-		icon = GFX_goal_generic_construct_military
-		prerequisite = { focus = GEN_ignore_corruption}
-		x = 19
-		y = 5
+		x = 0
+		y = 1
+		relative_position_id = collectivist_ethos
 		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
+	
+		search_filters = { FOCUS_FILTER_POLITICAL  }
 
 		available_if_capitulated = yes
 
-		completion_reward = {
-			add_ideas = deterrence
-			add_war_support = 0.05
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				any_neighbor_country = {
+					is_major = yes
+					has_government = communism
+				}
+			}			
+			modifier = {
+				factor = 0
+				AND = {
+					is_historical_focus_on = yes
+					NOT = { has_government = communism }
+				}
+			}
 		}
-	}
-#
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = internationalism
+				days = 720
+			}
+		}
+	}	
+
 	focus = {
-		id = GEN_create_a_better_union
-		icon = GFX_focus_ideology_progressivism
-		prerequisite = { focus = GEN_rewrite_the_constitution}
-		mutually_exclusive = { focus = GEN_ban_public_opposition}
+		id = liberty_ethos
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = political_effort }
+		mutually_exclusive = { focus = collectivist_ethos }
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+			}
+		}
 		x = 1
 		y = 1
-		relative_position_id = GEN_rewrite_the_constitution
+		relative_position_id = political_effort
 		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_country_flag = SLA_huey_is_leader
-			}
-			modifier = {
-				factor = 50
-				has_government = progressivism
-			}
-		}
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
 		available_if_capitulated = yes
 
-		completion_reward = {
-			add_popularity = {
-				ideology = progressivism
-				popularity = 0.2
+
+		ai_will_do = {
+			factor = 95
+			modifier = {
+				factor = 0.1
+				any_neighbor_country = {
+					is_major = yes
+					OR = {
+						has_government = communism
+						has_government = fascism
+					}
+				}
+				NOT = {
+					any_neighbor_country = {
+						is_major = yes
+						has_government = democratic
+					}
+				}
 			}
 		}
-	}
-	focus = {
-		id = GEN_push_social_reform
-		icon = GFX_focus_generic_treaty
-		prerequisite = { focus = GEN_create_a_better_union}
-		x = 0
-		y = 1
-		relative_position_id = GEN_create_a_better_union
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_stability = 0.05
-			add_war_support = 0.05
-			add_political_power = 50
-		}
-	}
-	focus = {
-		id = GEN_protect_others
-		icon = GFX_goal_generic_improve_relations
-		prerequisite = { focus = GEN_push_social_reform}
-		x = 0
-		y = 1
-		relative_position_id = GEN_push_social_reform
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		available_if_capitulated = yes
 
 		completion_reward = {
 			add_ideas = liberty_ethos_focus
-			add_ideas = ideological_fanaticism_focus
+		}
+	}
+
+	focus = {
+		id = militarism
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = nationalism_focus }
+		x = 0
+		y = 1
+		relative_position_id = nationalism_focus
+		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL  }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+				limit = { has_idea = neutrality_idea }
+				remove_ideas = neutrality_idea
+			}			
+			add_ideas = militarism_focus
+			army_experience = 20
 			set_rule = { can_send_volunteers = yes }
-			# add_ideas = volunteer_corps_focus
-			if = {
-				limit = {
-					is_ai = no
-				}
-				set_rule = {
-					can_create_factions = yes
-				}
-			}
 		}
 	}
+
 	focus = {
-		id = GEN_call_an_emergency_draft
-		icon = GFX_focus_generic_manpower
-		prerequisite = { focus = GEN_an_iron_fortress focus = GEN_forign_intervention focus = GEN_protect_others}
-		x = 19
-		y = 7
+		id = political_correctness
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = internationalism_focus }
+		x = 0
+		y = 1
+		relative_position_id = internationalism_focus
 		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
+	
+		search_filters = { FOCUS_FILTER_POLITICAL  }
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_ideas = militarism_focus
-			add_manpower = 10000
+			if = {
+				limit = { has_idea = neutrality_idea }
+				remove_ideas = neutrality_idea
+			}		
+			add_political_power = 200
+			add_ideas = idea_political_correctness
 		}
 	}
-#
+
 	focus = {
-		id = GEN_sieze_the_means_of_production
-		icon = GFX_goal_support_communism
-		prerequisite = { focus = GEN_reopen_the_political_sphere}
-		mutually_exclusive = { focus = GEN_ideals_of_the_union}
-		mutually_exclusive = { focus = GEN_take_advantage_of_the_chaos}
-		x = 23
+		id = neutrality_focus
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = liberty_ethos }
+		mutually_exclusive = { focus = interventionism_focus }
+		x = 0
 		y = 1
+		relative_position_id = liberty_ethos
 		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available_if_capitulated = yes
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
 				factor = 0
-				has_country_flag = SLA_huey_is_leader
-			}
-			modifier = {
-				factor = 50
-				has_government = communism
+				tag = AUS
 			}
 		}
-
-		available_if_capitulated = yes
 
 		completion_reward = {
-			add_popularity = {
-				ideology = communism
-				popularity = 0.10
-			}
-			add_timed_idea = { idea = communist_influence  days = 2000 }
-		}
-	}
-#
-	focus = {
-		id = GEN_work_with_the_workers
-		icon = GFX_goal_generic_improve_relations
-		prerequisite = { focus = GEN_sieze_the_means_of_production}
-		x = 23
-		y = 2
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_popularity = {
-				ideology = communism
-				popularity = 0.10
-			}
 			if = {
-				limit = {
-					is_ai = no
-				}
-				set_rule = {
-					can_create_factions = yes
-				}
+				limit = { NOT = { has_idea = neutrality_idea } }
+				add_ideas = neutrality_idea
 			}
+			add_political_power = 150
 		}
 	}
-#
+
 	focus = {
-		id = GEN_ban_fascist_publications
-		icon = GFX_focus_renounce_the_treaty_of_trianon
-		prerequisite = { focus = GEN_work_with_the_workers}
-		x = 23
-		y = 3
+		id = interventionism_focus
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = liberty_ethos }
+		mutually_exclusive = { focus = neutrality_focus }
+		x = 2
+		y = 1
+		relative_position_id = liberty_ethos
 		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		available_if_capitulated = yes
 
-		completion_reward = {
-			add_popularity = {
-				ideology = fascism
-				popularity = -0.1
-			}
-			add_popularity = {
-				ideology = neutrality
-				popularity = -0.05
-			}
-			add_popularity = {
-				ideology = communism
-				popularity = 0.05
-			}
-		}
-	}
-#
-	focus = {
-		id = GEN_strengthen_unions
-		icon = GFX_focus_generic_join_comintern
-		prerequisite = { focus = GEN_ban_fascist_publications}
-		x = 23
-		y = 4
-		cost = 10
+
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				has_idea = neutrality_idea
+			}
 		}
-
-		available_if_capitulated = yes
 
 		completion_reward = {
-			add_ideas = workers_union
-		}
-	}
-#
-	focus = {
-		id = GEN_take_out_fascists
-		icon = GFX_focus_generic_anti_fascist_diplomacy
-		prerequisite = { focus = GEN_strengthen_unions}
-		x = 23
-		y = 5
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			custom_effect_tooltip = take_out_countries_tt
-			random_neighbor_country = {
-				limit = {
-					has_government = fascism
-				}
-				every_owned_state = {
-					if = {
-						limit = {
-							is_in_home_area = yes
-						}
-					}
-					ROOT = {
-						add_state_claim = PREV 
-					}
-				}
+			if = {
+				limit = { has_idea = neutrality_idea }
+				remove_ideas = neutrality_idea
 			}	
-			add_war_support = 0.05
+			set_rule = { can_send_volunteers = yes }
+			add_political_power = 150
 		}
 	}
-#
+
 	focus = {
-		id = GEN_call_workers_to_arms
-		icon = GFX_focus_YUG_pan_slavic_congress
-		prerequisite = { focus = GEN_take_out_fascists}
-		x = 23
-		y = 6
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = militarism_focus
-		}
-	}
-#
-	focus = {
-		id = GEN_take_advantage_of_the_chaos
-		icon = GFX_goal_support_fascism
-		prerequisite = { focus = GEN_reopen_the_political_sphere}
-		mutually_exclusive = { focus = GEN_ideals_of_the_union}
-		mutually_exclusive = { focus = GEN_sieze_the_means_of_production}
-		x = 25
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 1   
-			modifier = {
-				factor = 0
-				has_country_flag = SLA_huey_is_leader
-			}
-			modifier = {
-				factor = 50
-				has_government = fascism
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_popularity = {            
-				ideology = fascism
-				popularity = 0.10
-			}
-			add_timed_idea = { idea = fascist_influence  days = 2000 }
-		}
-	}
-#
-	focus = {
-		id = GEN_purity_through_unity
-		icon = GFX_focus_usa_honor_the_confederacy
-		prerequisite = { focus = GEN_take_advantage_of_the_chaos}
-		x = 25
-		y = 2
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.10
-			}
-			if = {
-				limit = {
-					is_ai = no
-				}
-				set_rule = {
-					can_create_factions = yes
-				}
-			}
-		}
-	}
-#
-	focus = {
-		id = GEN_purge_non_purists
+		id = military_youth
 		icon = GFX_goal_generic_more_territorial_claims
-		prerequisite = { focus = GEN_purity_through_unity}
-		x = 25
-		y = 3
+		prerequisite = { focus = militarism }
+		x = 0
+		y = 1
+		relative_position_id = militarism
 		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_stability = 0.05
-			add_political_power = 25
-			add_popularity = {
-				ideology = democratic
-				popularity = -0.05
-			}
-			add_popularity = {
-				ideology = neutrality
-				popularity = -0.1
-			}
-			add_popularity = {
-				ideology = communism
-				popularity = -0.05
-			}
-		}
-	}
-#
-	focus = {
-		id = GEN_militarize_the_state
-		icon = GFX_focus_generic_manpower
-		prerequisite = { focus = GEN_purge_non_purists}
-		x = 25
-		y = 4
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = militarism_focus
-		}
-	}
-#
-	focus = {
-		id = GEN_nondiscriminate_recruitment
-		icon = GFX_focus_generic_little_entente
-		prerequisite = { focus = GEN_militarize_the_state}
-		x = 25
-		y = 5
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
+	
+		search_filters = { FOCUS_FILTER_POLITICAL  }
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_ideas = military_youth_focus
+			if = {
+				limit = { has_government = fascism }
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.2
+				}
+			}
+			if = {
+				limit = { has_government = communism }
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+			}
 		}
 	}
-#
+
 	focus = {
-		id = GEN_purge_the_communists
-		icon = GFX_focus_contain_communism
-		prerequisite = { focus = GEN_nondiscriminate_recruitment}
-		x = 25
-		y = 6
+		id = deterrence
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = neutrality_focus }
+		x = 0
+		y = 1
+		relative_position_id = neutrality_focus
 		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
+	
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			custom_effect_tooltip = take_out_countries_tt
-			random_neighbor_country = {
-				limit = {
-					has_government = communism
-				}
-				every_owned_state = {
-					if = {
-						limit = {
-							is_in_home_area = yes
-						}
-					}
-					ROOT = {
-						add_state_claim = PREV 
-					}
-				}
-			}	
-			add_war_support = 0.05
+			add_ideas = deterrence
 		}
 	}
-#
-	focus = {
-		id = GEN_Fanatical_Ideologicalism
-		icon = GFX_focus_YUG_pan_slavic_congress
-		prerequisite = { focus = GEN_call_workers_to_arms focus = GEN_purge_the_communists }
-		x = 24
-		y = 7
-		cost = 10
 
+	focus = {
+		id = volunteer_corps
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = interventionism_focus }
+		x = 0
+		y = 1
+		relative_position_id = interventionism_focus
+		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = volunteer_corps_focus
+		}
+	}
+
+	focus = {
+		id = paramilitarism
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = military_youth }
+		x = 0
+		y = 1
+		relative_position_id = military_youth
+		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL  }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = paramilitarism_focus
+		}
+	}
+
+	focus = {
+		id = indoctrination_focus
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = political_correctness }
+		x = 0
+		y = 1
+		relative_position_id = political_correctness
+		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL  }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = indoctrination_focus
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = foreign_expeditions
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = volunteer_corps }
+		x = 0
+		y = 1
+		relative_position_id = volunteer_corps
+		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = foreign_expeditions_focus
+		}
+	}
+
+	focus = {
+		id = why_we_fight
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = foreign_expeditions focus = deterrence }
+		available = { 
+			OR = { 
+				threat > 0.75 
+				has_defensive_war = yes 
+			}
+		}
+
+		continue_if_invalid = yes
+		
+		x = -2
+		y = 1
+		relative_position_id = foreign_expeditions
+		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = why_we_fight_focus
+			custom_effect_tooltip = why_we_fight_effect
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_idea = neutrality_idea } }
+					set_rule = { can_create_factions = yes }
+				}			
+			}
+		}
+	}
+
+	focus = {
+		id = political_commissars
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = indoctrination_focus }
 		available = {
-					date > 1939.1.1
 		}
-
-		ai_will_do = {
-			factor = 1
-		}
+		x = 0
+		y = 1
+		relative_position_id = indoctrination_focus
+		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL  }
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_ideas = GEN_Fanatical_Ideologicalismidea
+			add_ideas = political_commissars_focus
+			if = {
+				limit = { has_government = fascism }
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.2
+				}
+			}
+			if = {
+				limit = { has_government = communism }
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+			}
+			add_political_power = 200
 		}
 	}
-#
+
+	focus = {
+		id = ideological_fanaticism
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = paramilitarism focus = political_commissars }
+		x = 1
+		y = 1
+		relative_position_id = paramilitarism
+		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ideological_fanaticism_focus
+			set_rule = {
+				can_create_factions = yes
+			}
+			hidden_effect = {
+				set_rule = { can_use_kamikaze_pilots = yes }
+			}
+			custom_effect_tooltip = kamikaze_focus_tooltip
+		}
+	}
+	
+	focus = {
+		id = technology_sharing
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = ideological_fanaticism focus = why_we_fight }
+		available = {
+			has_war = yes
+			is_in_faction = yes
+			OR = {
+				num_of_factories > 50
+				any_other_country = {
+					is_in_faction_with = ROOT
+					num_of_factories > 50
+				}
+			}
+		}		
+		x = 2
+		y = 1
+		relative_position_id = ideological_fanaticism
+		cost = 10
+	
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					original_research_slots < 3
+				}
+				add_research_slot = 1
+			}
+			if = {
+				limit = {
+					original_research_slots > 2
+				}
+				add_tech_bonus = {
+					name = electronics_bonus
+					bonus = 1.0
+					uses = 1
+					category = electronics
+				}
+				add_tech_bonus = {
+					name = industrial_bonus
+					bonus = 1.0
+					uses = 1
+					category = industry
+				}	
+				add_tech_bonus = {
+					name = infantry_artillery_bonus #@#
+					bonus = 1.0
+					uses = 1
+					category = infantry_weapons
+					category = artillery
+				}				
+			}			
+		}
+	}	
+
 }

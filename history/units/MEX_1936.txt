@@ -1,7 +1,7 @@
-division_template = {
-	name = "Infantry Division"
+﻿division_template = {
+	name = "División de Infanteria"
 
-	division_names_group = MEX_INF_01
+	division_names_group = SPAN_INF_01
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -13,141 +13,289 @@ division_template = {
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
-		infantry = { x = 3 y = 0 }
 	}
-	priority = 2
 	support = {
-		recon = { x = 0 y = 0 }
-		artillery = { x = 0 y = 1 }
+       	artillery = { x = 0 y = 0 }
 	}
 }
 
 division_template = {
-	name = "Infantry Brigade"
+	name = "Brigada Agrarista"
 
-	division_names_group = MEX_INF_01
+	division_names_group = MEX_INF_02
+
+	#is_locked = yes
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
-		infantry = { x = 1 y = 0 }
-		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
-		infantry = { x = 2 y = 0 }
-		infantry = { x = 2 y = 1 }
-		infantry = { x = 2 y = 2 }
-		infantry = { x = 3 y = 0 }
 	}
-	priority = 1
+	priority = 0
+}
+
+division_template = {
+	name = "División de Caballería"
+
+	division_names_group = SPAN_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+       	artillery = { x = 0 y = 0 }
+	}
 }
 
 units = {
-	division = {
-		name = "1st Mexican Royal Guard"
-		location = 417
-		division_template = "Infantry Division"
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.9
-    }
-    division = {
-		name = "2nd Mexican Royal Guard"
-		location = 4511
-		division_template = "Infantry Division"
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.9
-    }
-    division = {
-		name = "3rd Mexican Royal Guard"
-		location = 4515
-		division_template = "Infantry Division"
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.9
-    }
-    division = {
-		name = "4th Mexican Royal Guard"
-		location = 4290
-		division_template = "Infantry Division"
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.9
-    }
-    division = {
-		name = "5th Mexican Royal Guard"
-		location = 417
-		division_template = "Infantry Division"
-		start_experience_factor = 0.4
-		start_equipment_factor = 0.9
-    }
-    division = {
+	##### Ejército Mexicano #####
+	division= {	# "1a División de Infantería"
 		division_name = {
 			is_name_ordered = yes
 			name_order = 1
 		}
-		location = 4473
-		division_template = "Infantry Brigade"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
-    }
-    division = {
+		location = 1965 # Mexico City
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+		force_equipment_variants = { infantry_equipment_0 = { owner = "USA" } }
+	}
+
+	division= {	# "2a División de Infantería"
 		division_name = {
 			is_name_ordered = yes
 			name_order = 2
 		}
-		location = 4526
-		division_template = "Infantry Brigade"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
-    }
-    division = {
+		location = 1892 # Baja
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+		force_equipment_variants = { infantry_equipment_0 = { owner = "USA" } }
+	}
+
+	division= {	# "3a División de Infantería"
 		division_name = {
 			is_name_ordered = yes
 			name_order = 3
 		}
-		location = 4620
-		division_template = "Infantry Brigade"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
-    }
-    division = {
+		location = 13089 # Guadalajara
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+		force_equipment_variants = { infantry_equipment_0 = { owner = "GER" } }
+	}
+
+	division= {	
+		name = "Estado Mayor Presidencial"
+		location = 1965 # Mexico City
+		division_template = "División de Infanteria"
+		start_experience_factor = 0.3
+		force_equipment_variants = { infantry_equipment_1 = { owner = "USA" } }
+	}
+
+	division= {	# "1a División de Caballería"
 		division_name = {
 			is_name_ordered = yes
-			name_order = 4
+			name_order = 1
 		}
-		location = 455
-		division_template = "Infantry Brigade"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
-    }
-    division = {
+		location = 1965 # Mexico City
+		division_template = "División de Caballería"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.75
+		force_equipment_variants = { infantry_equipment_0 = { owner = "USA" } }
+	}
+	division = {	# "2a División de Caballería"
 		division_name = {
 			is_name_ordered = yes
-			name_order = 5
+			name_order = 2
 		}
-		location = 4434
-		division_template = "Infantry Brigade"
+		location = 4904 # Compeche
+		division_template = "División de Caballería"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.75
+		force_equipment_variants = { infantry_equipment_0 = { owner = "USA" } }
+	}
+
+	division = {
+		location = 1965 # Mexico City
+		division_template = "Brigada Agrarista"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
-    }
-    division = {
-		division_name = {
-			is_name_ordered = yes
-			name_order = 6
-		}
-		location = 4370
-		division_template = "Infantry Brigade"
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "GER" } }
+	}
+
+	division = {
+		location = 1965 # Mexico City
+		division_template = "Brigada Agrarista"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "GER" } }
+	}
+
+	division = {
+		location = 1965 # Mexico City
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "GER" } }
+	}
+
+	division = {
+		location = 1900
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "GER" } }
+	}
+
+	division = {
+		location = 2021
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "GER" } }
+	}
+
+	division = {
+		location = 10889
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "GER" } }
+	}
+
+	division = {
+		location = 12715
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "GER" } }
+	}
+
+	division = {
+		location = 8032
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "GER" } }
+	}
+
+	division = {
+		location = 12461
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "USA" } }
+	}
+
+	division = {
+		location = 10765
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "USA" } }
+	}
+
+	division = {
+		location = 4908
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "USA" } }
+	}
+
+	division = {
+		location = 4977
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "USA" } }
+	}
+
+	division = {
+		location = 10730
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "USA" } }
+	}
+
+	division = {
+		location = 2051
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "USA" } }
+	}
+
+	division = {
+		location = 5015
+		division_template = "Brigada Agrarista"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+		force_equipment_variants = { infantry_equipment_0 = { owner = "USA" } }
 	}
 }
-### Starting Equipment ###
+
+air_wings = {
+	### Fuerza Aérea Mexicana -- Mexico City
+	277 = {
+		# CAS Air Group -- de Haviland DH-4Bs
+		CAS_equipment_1 =  {
+			owner = "MEX" 
+			amount = 12
+		}
+		fighter_equipment_0 =  {
+			owner = "MEX"
+			amount = 6
+		}
+		tac_bomber_equipment_0 =  {
+			owner = "MEX"
+			amount = 6
+		}
+	}
+}
+
 instant_effect = {
 	add_equipment_production = {
 		equipment = {
 			type = infantry_equipment_0
 			creator = "MEX"
 		}
-		requested_factories = 3
-		progress = 0.28
-		efficiency = 60
+		requested_factories = 1
+		progress = 0.20
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "MEX"
+		}
+		requested_factories = 1
+		progress = 0.20
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = CAS_equipment_1
+			creator = "MEX" 
+		}
+		requested_factories = 1
+		progress = 0.20
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = convoy_1
+			creator = "MEX" 
+		}
+		requested_factories = 2
+		progress = 0.20
+		efficiency = 100
 	}
 }

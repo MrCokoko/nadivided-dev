@@ -1,8 +1,34 @@
+debug_decisions = {
+	icon = generic_research
+	visible = {
+		is_debug = yes
+	}
+}
 propaganda_efforts = {
 	icon = generic_propaganda
 
 	visible = {
 
+	}
+}
+MTG_naval_treaties = {
+	picture = GFX_decision_cat_picture_naval_treaties
+	allowed = {
+		has_dlc = "Man the Guns"
+	}
+	visible = {
+		OR = {
+			has_naval_treaty_trigger = yes
+			is_major = yes
+		}
+		any_owned_state = {
+			is_coastal = yes
+		}
+	}
+}
+SAF_anti_colonialist_crusade = {
+	allowed = {
+		original_tag = SAF
 	}
 }
 
@@ -45,11 +71,24 @@ foreign_influence = {
 
 fascism_on_the_rise = {
 	icon = generic_fascism
-	
-	visible = {
-		NOT = { has_government = fascism }
-		has_idea_with_trait = fascist_demagogue
+
+	allowed = {
+		NOT = {
+			AND = {
+				has_dlc = "Man the Guns"
+				OR = {
+					original_tag = USA
+					original_tag = MEX
+					original_tag = ENG
+				}
+			}
+		}
 	}
+	
+	#visible = {
+	#	NOT = { has_government = fascism }
+	#	has_idea_with_trait = fascist_demagogue
+	#}
 }
 
 democratic_on_the_rise = {
@@ -59,45 +98,32 @@ democratic_on_the_rise = {
 		always = yes
 	}
 	
-	visible = {
-		NOT = { has_government = democratic }
-		has_idea_with_trait = democratic_reformer
-	}
+	#visible = {
+	#	NOT = { has_government = democratic }
+	#	has_idea_with_trait = democratic_reformer
+	#}
 }
 
 communism_on_the_rise = {
 	icon = generic_communism
-	
-	visible = {
-		NOT = { has_government = communism }
-		has_idea_with_trait = communist_revolutionary
-	}
-}
-
-progressivism_on_the_rise = {
-	icon = generic_progressivism #decision_category_generic_progressivism
 
 	allowed = {
-		always = yes
+		NOT = {
+			AND = {
+				has_dlc = "Man the Guns"
+				OR = {
+					original_tag = USA
+					original_tag = MEX
+					original_tag = ENG
+				}
+			}
+		}
 	}
 	
-	visible = {
-		NOT = { has_government = progressivism }
-		has_idea_with_trait = progressive_reformer
-	}
-}
-
-populism_on_the_rise = {
-	icon = generic_populism #decision_category_generic_populism
-
-	allowed = {
-		always = yes
-	}
-	
-	visible = {
-		NOT = { has_government = longism }
-		has_idea_with_trait = populist_reformer
-	}
+	#visible = {
+	#	NOT = { has_government = communism }
+	#	has_idea_with_trait = communist_revolutionary
+	#}
 }
 
 crisis = {
@@ -132,9 +158,6 @@ prospect_for_resources = {
 	allowed = {
 		has_dlc = "Waking the Tiger"
 	}
-	visible = {
-		always = yes
-	}
 }
 
 special_projects = {
@@ -161,5 +184,136 @@ category_exile_forces = {
 	picture = GFX_decision_cat_picture_government_in_exile
 	allowed = {
 		has_dlc = "Man the Guns"
+	}
+}
+category_test_decisions = {
+	priority = 110
+	visible = {
+		is_debug = yes
+	}
+}
+
+lar_local_recruitment = {
+	allowed = { has_dlc = "La Resistance" }
+
+	visible = { has_done_agency_upgrade = upgrade_training_centers }
+
+	visibility_type = map_and_decisions_view
+	
+	on_map_area = {
+		state = 8
+		name = LAR_recruitment_europe
+		zoom = 650
+		
+		target_root_trigger = {
+			OR = {
+				has_country_flag = europe_recruitment_unlocked
+				capital_scope = { is_on_continent = europe }
+			}
+		}
+	}
+
+	on_map_area = {
+		state = 373
+		name = LAR_recruitment_north_america
+		zoom = 850
+
+		target_root_trigger = {
+			OR = {
+				has_country_flag = north_america_recruitment_unlocked
+				capital_scope = { is_on_continent = north_america }
+			}
+		}
+	}
+
+	on_map_area = {
+		state = 487
+		name = LAR_recruitment_south_america
+		zoom = 850
+
+		target_root_trigger = {
+			OR = {
+				has_country_flag = south_america_recruitment_unlocked
+				capital_scope = { is_on_continent = south_america }
+			}
+		}
+	}
+
+	on_map_area = {
+		state = 295
+		name = LAR_recruitment_africa
+		zoom = 850
+
+		target_root_trigger = {
+			OR = {
+				has_country_flag = africa_recruitment_unlocked
+				capital_scope = { is_on_continent = africa }
+			}
+		}
+	}
+
+	on_map_area = {
+		state = 597
+		name = LAR_recruitment_asia
+		zoom = 850
+
+		target_root_trigger = {
+			OR = {
+				has_country_flag = asia_recruitment_unlocked
+				capital_scope = { is_on_continent = asia }
+			}
+			NOT = {
+				tag = RAJ
+				tag = PAK
+				tag = BAN
+				tag = NEP
+				tag = BHU
+				tag = SRL
+			}
+		}
+	}
+
+	on_map_area = {
+		state = 521
+		name = LAR_recruitment_oceania
+		zoom = 850
+
+		target_root_trigger = {
+			OR = {
+				has_country_flag = australia_recruitment_unlocked
+				capital_scope = { is_on_continent = australia }
+			}
+		}
+	}
+
+	on_map_area = {
+		state = 439
+		name = LAR_recruitment_india
+		zoom = 850
+
+		target_root_trigger = {
+			OR = {
+				has_country_flag = india_recruitment_unlocked
+				tag = RAJ
+				tag = PAK
+				tag = BAN
+				tag = NEP
+				tag = BHU
+				tag = SRL
+			}
+		}
+	}
+
+	on_map_area = {
+		state = 656
+		name = LAR_recruitment_middle_east
+		zoom = 850
+
+		target_root_trigger = {
+			OR = {
+				has_country_flag = middle_east_recruitment_unlocked
+				capital_scope = { is_on_continent = middle_east }
+			}
+		}
 	}
 }

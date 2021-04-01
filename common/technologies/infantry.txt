@@ -25,11 +25,7 @@ technologies = {
 		path = {
 			leads_to_tech = infantry_weapons1
 			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = bicycle_infantry1
-			research_cost_coeff = 1
-		}	
+		}		
 
 		research_cost = 1.5
 		start_year = 1918
@@ -71,6 +67,16 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			
+			modifier = {
+				factor = 10
+				tag = CHI
+				
+				OR = {
+					date > "1937.1.1"
+					JAP = { is_ai = no }
+				}
+			}
 			
 			modifier = {
 				factor = 10
@@ -119,6 +125,19 @@ technologies = {
 		ai_will_do = {
 			factor = 2
 			
+			modifier = {
+				factor = 5
+
+				OR = {
+					tag = CHI
+					tag = PRC
+					tag = XSM
+					tag = SIK
+					tag = GXC
+					tag = SHX
+					tag = YUN
+				}
+			}
 
 			modifier = {
 				factor = 5
@@ -163,7 +182,18 @@ technologies = {
 			modifier = {
 				num_of_military_factories < 50
 				factor = 0.5
-			}		
+			}
+			modifier = {
+				factor = 0
+				tag = SOV
+				OR = {
+					date < "1944.1.1" # stock up on lots of rifles, we got the manpower
+					AND = {
+						date > "1943.1.1"
+						surrender_progress < 0.1 # if we arent losing badly its ok
+					}
+				}				
+			}			
 		}
 	}
 	improved_infantry_weapons_2 = {
@@ -329,6 +359,11 @@ technologies = {
 		ai_will_do = {
 			factor = 0.8
 			
+			
+			modifier = {
+				tag = GER
+				factor = 2.5
+			}
 			modifier = {
 				num_of_military_factories > 150
 				factor = 2.5
@@ -410,12 +445,12 @@ technologies = {
 			position = { x = 2 y = @1936 }
 		}
 		
-		on_research_complete = {
-			limit = {
-				NOT = {
-					has_template_containing_unit = paratrooper
-				}
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = paratrooper
 			}
+		}
+		on_research_complete = {
 			hidden_effect = {
 				load_oob = "unlock_paratroopers"
 			}
@@ -429,7 +464,20 @@ technologies = {
 		ai_will_do = {
 			factor = 0.5
 			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
 			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 	}
 	
@@ -459,6 +507,20 @@ technologies = {
 		ai_will_do = {
 			factor = 0.5
 			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 	}
 
@@ -483,6 +545,20 @@ technologies = {
 		ai_will_do = {
 			factor = 0.5
 			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 	}
 	
@@ -492,12 +568,12 @@ technologies = {
 			marine
 		}
 		
-		on_research_complete = {
-			limit = {
-				NOT = {
-					has_template_containing_unit = marine
-				}
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = marine
 			}
+		}
+		on_research_complete = {
 			hidden_effect = {
 				load_oob = "unlock_marines"
 			}			
@@ -523,6 +599,15 @@ technologies = {
 		ai_will_do = {
 			factor = 0.7
 			
+			modifier = {
+				factor = 3
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 3
+				tag = JAP
+			}
 		}
 	}
 	
@@ -552,6 +637,15 @@ technologies = {
 		ai_will_do = {
 			factor = 0.7
 			
+			modifier = {
+				factor = 3
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 3
+				tag = JAP
+			}
 		}
 	}
 	
@@ -575,6 +669,15 @@ technologies = {
 		ai_will_do = {
 			factor = 0.7
 			
+			modifier = {
+				factor = 3
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 3
+				tag = JAP
+			}
 		}
 	}	
 	
@@ -584,12 +687,12 @@ technologies = {
 			mountaineers
 		}
 
-		on_research_complete = {
-			limit = {
-				NOT = {
-					has_template_containing_unit = mountaineers
-				}
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = mountaineers
 			}
+		}
+		on_research_complete = {
 			hidden_effect = {
 				load_oob = "unlock_mountineers"
 			}
@@ -934,6 +1037,49 @@ technologies = {
 		}
 	}
 
+	mountain_warfare = {
+
+		research_cost = 1
+
+		# only from focus!
+		allow = {
+			always = no
+		}
+
+
+		#If you change these
+		#Change the custom tooltip too: GRE_mountain_training_effect
+		infantry = {
+			mountain = {
+				defence = 0.05
+				movement = 0.05
+			}
+		}
+
+		marine = {
+			mountain = {
+				attack = 0.05 
+				movement = 0.1
+			}
+		}
+
+		mountaineers = {
+			mountain = {
+				attack = 0.05
+				defence = 0.05
+				movement = 0.1
+			}
+		}
+
+		paratrooper = {
+			mountain = {
+				attack = 0.05
+				movement = 0.1
+			}
+		}
+
+	}
+
 	night_vision = {
 
 		land_night_attack = 0.1
@@ -1072,6 +1218,19 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
+				factor = 15
+
+				OR = {
+					tag = CHI
+					tag = PRC
+					tag = XSM
+					tag = SIK
+					tag = GXC
+					tag = SHX
+					tag = YUN
+				}
+			}
+			modifier = {
 				factor = 2
 				date > "1937.1.1"
 			}
@@ -1150,6 +1309,19 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 5
+
+				OR = {
+					tag = CHI
+					tag = PRC
+					tag = XSM
+					tag = SIK
+					tag = GXC
+					tag = SHX
+					tag = YUN
+				}
+			}
 			modifier = {
 				factor = 2
 				date > "1938.1.6"
@@ -1349,12 +1521,12 @@ technologies = {
 			motorized_equipment_1
 		}
 
-		on_research_complete = {
-			limit = {
-				NOT = {
-					has_template_containing_unit = motorized
-				}
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = motorized
 			}
+		}
+		on_research_complete = {
 			hidden_effect = {
 				load_oob = "unlock_motorized"
 			}			
@@ -1429,6 +1601,11 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = SOV
+			}
 		}
 		
 		categories = {
@@ -1666,6 +1843,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				tag = USA
+				factor = 2
+			}
 		}
 	}
 
@@ -1704,6 +1885,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				tag = USA
+				factor = 2
+			}
 		}
 	}
 
@@ -1792,181 +1977,32 @@ technologies = {
 		}
 	}
 	
-	######## bicycle infantry ##########
-	bicycle_infantry1 = {
+	######### FROM JAPANESE FOCUS ##########
+	bicycle_infantry = {
 		
-		research_cost = 1.5
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
 		start_year = 1936
-		folder = {
-			name = infantry_folder
-			position = { x = 4 y = @1936 }
-		}
-		categories = {
-			infantry_tech
-			bicycle_tech
-		}
-		show_equipment_icon = yes
-		enable_equipments = {
-			bicycle_equipment_1
-		}
+
 		enable_subunits = {
 			bicycle_battalion
-		}
-		sub_technologies = {
-			bicycle_rocket_unit
-		}
-		path = {
-			leads_to_tech = bicycle_infantry2
-		}
-
-		ai_will_do = {
-			factor = 2
-		}	
+		}		
 	}
-	bicycle_rocket_unit = {
 
-		research_cost = 2
-		start_year = 1939
-
-		enable_equipments = {
-			bicycle_rocket_equipment_1
+	camelry = {
+		
+		allow = {
+			always = no
 		}
+
+		research_cost = 1
+		start_year = 1936
+
 		enable_subunits = {
-			rocket_bicycle_battalion
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		categories = {
-			bicycle_tech
-		}
-	}
-	bicycle_infantry2 = {
-		research_cost = 1
-		start_year = 1938
-		folder = {
-			name = infantry_folder
-			position = { x = 4 y = @1938 }
-		}
-		categories = {
-			infantry_tech
-			bicycle_tech
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		path = {
-			leads_to_tech = bicycle_infantry3
-		}
-		bicycle_battalion = {
-			soft_attack = 0.05
-			maximum_speed = 0.1
-			urban = {
-				movement = 0.1
-			}
-		}
-	}
-	bicycle_infantry3 = {
-		research_cost = 1.5
-		start_year = 1939
-		folder = {
-			name = infantry_folder
-			position = { x = 4 y = @1939 }
-		}
-		categories = {
-			infantry_tech
-			bicycle_tech
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		rocket_bicycle_battalion = {
-			soft_attack = 0.1
-			reliability = 0.1
-			maximum_speed = 0.1
-		}
-		enable_equipments = {
-			bicycle_equipment_2
-		}
-		path = {
-			leads_to_tech = bicycle_infantry4
-		}
-	}
-	bicycle_infantry4 = {
-		research_cost = 1
-		start_year = 1941
-		folder = {
-			name = infantry_folder
-			position = { x = 4 y = @1941 }
-		}
-		categories = {
-			infantry_tech
-			bicycle_tech
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		bicycle_battalion = {
-			soft_attack = 0.05
-			maximum_speed = 0.1
-		}
-		rocket_bicycle_battalion = {
-			soft_attack = 0.1
-			reliability = 0.1
-			maximum_speed = 0.1
-		}
-		path = {
-			leads_to_tech = bicycle_infantry5
-		}
-	}
-	bicycle_infantry5 = {
-		research_cost = 1.5
-		start_year = 1942
-		folder = {
-			name = infantry_folder
-			position = { x = 4 y = @1942 }
-		}
-		categories = {
-			infantry_tech
-			bicycle_tech
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		enable_equipments = {
-			bicycle_equipment_3
-		}
-		rocket_bicycle_battalion = {
-			soft_attack = 0.1
-			reliability = 0.1
-			maximum_speed = 0.1
-		}
-		path = {
-			leads_to_tech = bicycle_infantry6
-		}
-	}
-	bicycle_infantry6 = {
-		research_cost = 1
-		start_year = 1944
-		folder = {
-			name = infantry_folder
-			position = { x = 4 y = @1944 }
-		}
-		categories = {
-			infantry_tech
-			bicycle_tech
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		bicycle_battalion = {
-			soft_attack = 0.05
-			maximum_speed = 0.1
-		}
-		rocket_bicycle_battalion = {
-			soft_attack = 0.1
-			reliability = 0.1
-			maximum_speed = 0.1
-		}
+			camelry
+		}		
 	}
 }

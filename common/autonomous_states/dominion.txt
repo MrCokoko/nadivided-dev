@@ -1,13 +1,14 @@
 autonomy_state = {
 	id = autonomy_dominion
 	
-	min_freedom_level = 0.75
+	min_freedom_level = 0.8
 	
 	manpower_influence = 0.2
 	
 	rule = {
 		can_not_declare_war = yes
 		can_decline_call_to_war = no
+		can_be_spymaster = yes
 	}
 	
 	modifier = {
@@ -38,10 +39,29 @@ autonomy_state = {
 	}
 	
 	can_take_level = {
-		#trigger here
+		if = {
+			limit = {
+				original_tag = AST
+			}
+			OR = {
+				has_completed_focus = AST_adopt_westminster
+				has_completed_focus = AST_abandon_the_westminster_system
+				has_completed_focus = AST_sever_ties_with_uk
+			}
+		}
+		if = {
+			limit = {
+				original_tag = SAF
+			}
+			has_completed_focus = SAF_abandon_westminster
+		}
 	}
 
 	can_lose_level = {
-		#trigger here
+		if = {
+			limit = {
+
+			}
+		}
 	}
 }

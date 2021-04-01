@@ -31,7 +31,7 @@ continuous_focus_palette = {
 		
 		available_if_capitulated = yes
 	}
-	
+
 	focus = {
 		id = continuous_air_production
 		
@@ -266,4 +266,5 @@ continuous_focus_palette = {
 		
 		available_if_capitulated = yes
 	}
+
 }

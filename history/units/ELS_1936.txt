@@ -1,46 +1,50 @@
 ﻿division_template = {
-	name = "Infantry"
-
-	division_names_group = SPA_INF_01
+	name = "Brigada de Infanteria"		# Military dictatorships were supported by frontline army brigades during period
+	division_names_group = SPAN_INFB_02
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
-		infantry = { x = 1 y = 0 }
-		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
-		infantry = { x = 2 y = 0 }
-		infantry = { x = 2 y = 1 }
-		infantry = { x = 2 y = 2 }
- 		infantry = { x = 3 y = 0 }
 	}
-	priority = 1
 }
 
 units = {
-	division = {
+	##### Ejército de El Salvador #####
+	division= {	# "1a Brigada de Ejercito"
 		division_name = {
-			is_name_ordered = yes
-			name_order = 1
+				is_name_ordered = yes
+				name_order = 1
 		}
-		location = 258
-		division_template = "Infantry"
+		location = 12823 # San Salvador
+		division_template = "Brigada de Infanteria"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
 	}
-	division = {
+	division= {	# "2a Brigada de Ejercito"
 		division_name = {
-			is_name_ordered = yes
-			name_order = 2
+				is_name_ordered = yes
+				name_order = 2
 		}
-		location = 258
-		division_template = "Infantry"
+		location = 12823 # San Salvador
+		division_template = "Brigada de Infanteria"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
 	}
-} 
-### Starting Equipment ###
+	division= {	# "3a Brigada de Ejercito"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 3
+		}
+		location = 12823 # San Salvador
+		division_template = "Brigada de Infanteria"
+		start_experience_factor = 0.2
+	}
+
+	##### No Notable Naval Forces #####
+}
+
+##### No Notable Air Forces #####
+
+
 instant_effect = {
 	add_equipment_production = {
 		equipment = {
@@ -48,7 +52,7 @@ instant_effect = {
 			creator = "ELS"
 		}
 		requested_factories = 1
-		progress = 0.28
+		progress = 0.72
 		efficiency = 100
 	}
 }
