@@ -80,6 +80,49 @@ SIL_Dustbowl_Economy = {
 			}
 		}
 #
+
+SIL_Windy_City_Politics = {
+		picture = microphone
+	
+			allowed = {
+			tag = SIL
+			}
+		
+		available = {
+		
+		}
+	
+	allowed_civil_war = {
+		always = yes
+	} 
+
+	removal_cost = -1
+	
+	modifier = {
+			stability_factor = -0.05
+	}
+#
+SIL_Guardians_of_Lincoln = {
+		picture = microphone
+	
+			allowed = {
+			tag = SIL
+			}
+		
+		available = {
+		
+		}
+	
+	allowed_civil_war = {
+		always = yes
+	} 
+
+	removal_cost = -1
+	
+	modifier = {
+			political_power_gain = 0.10
+	}
+#			
 #######################################################
 	}
 	

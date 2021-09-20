@@ -53,5 +53,6 @@ tags={
 	"National Focuses"
 }
 name="North America Divided (DEV VERSION)"
+path="C:/Users/conno/Documents/Paradox Interactive/Hearts of Iron IV/mod/nadivided"
 supported_version="1.10.*"
 remote_file_id="2095618478"

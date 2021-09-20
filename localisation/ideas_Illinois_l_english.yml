@@ -1,7 +1,10 @@
 ﻿l_english:
 
   SIL_Illinois_Militia:0 "Illinois Militia"
-  SIL_Illinois_Militia_desc:0 "We have converted National Guard system into the Illinois Guard system to protect our new nation"
+  SIL_Illinois_Militia_desc:0 "We have converted the former Illinois State Guard into the Illinois Republican Army, which is just the same thing with different uniforms."
 
   SIL_Dustbowl_Economy:0 "Dustbowl Economy"
-  SIL_Dustbowl_Economy_desc:0 "Ravanged by the duststorms of 1934 our economy has still a long ways to go to recovery, condtions arn't much better now. Eventually things will change"
+  SIL_Dustbowl_Economy_desc:0 "Ravanged by the duststorms of 1934, our agriculture has still a long ways to go to recovery, and even now condtions aren't much better. Eventually things will change"
+  
+  SIL_Guardians_of_Lincoln:0 "Guardians of Lincoln"
+  SIL_Guardians_of_Lincoln_desc:0 "Illinois is known as the Land of Lincoln, and we hold that true to our hearts. Abolitionists, progressives, and revolutionaries have seized control following the collaspe, and many hold sympathies for the segregated South. Perhaps we could do what Lincoln did?"
